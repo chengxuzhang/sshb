@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ?>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label"><?= $conf->title; ?></label>
-                                        <div class="layui-input-<?= empty($conf->remark) ? "block" : "inline" ?>">
+                                        <div class="layui-input-<?= empty($conf->remark) ? "block" : "inline" ?>" style="width: 550px;">
                                             <input type="text" name="<?= $conf->fieldName; ?>" lay-verify="<?= $conf->fieldName; ?>" autocomplete="off" class="layui-input" value="<?= $conf->value; ?>">
                                         </div>
                                         <?php if(!empty($conf->remark)) { ?>

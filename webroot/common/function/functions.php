@@ -170,7 +170,8 @@ if ( ! function_exists( 'getOssUrl' ) ) {
 if ( ! function_exists( 'getConfigList' ) ) {
     function getConfigList($str, $split = "=")
     {
-        $match = explode("\n", $str);
+        $string = str_replace("：",":", $str);
+        $match = explode("\n", $string);
         $res = [];
         foreach ($match as $val) {
             $arr = explode($split, $val);
