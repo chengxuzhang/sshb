@@ -1,0 +1,9 @@
+# /index.php
+# /index-test.php
+
+# /upload
+php_errors.log
+
+# /assets
+
+/video

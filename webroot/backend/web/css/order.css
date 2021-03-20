@@ -1,0 +1,316 @@
+.root61 .order-state .state-bottom,
+.root61 .order-state .state-lcol {
+    width: 325px
+}
+.root61 .order-state .state-rcol {
+    width: 860px
+}
+.root61 .order-state .state-others {
+    left: 345px
+}
+.root61 .order-process .node {
+    width: 65px
+}
+.root61 .order-process .node .node-icon {
+    left: 11px
+}
+.root61 .order-process .proce {
+    width: 124px;
+    background-image: url(../images/proce-icons.png)
+}
+.root61 .order-process.steps-4 .proce {
+    width: 184px;
+    height: 10px;
+    background-image: url(../images/proce-icons03.png)
+}
+.root61 .order-process.steps-4 .done {
+    background-position: 0 0
+}
+.root61 .order-process.steps-4 .doing {
+    background-position: 0 -15px
+}
+.root61 .order-process.steps-4 .wait {
+    background-position: 0 -40px
+}
+.root61 .order-process.steps-4 .wait .icon-cancel {
+    background-position: -159px -313px
+}
+.root61 #process-01 {
+    width: 254px
+}
+.root61 #process-02 {
+    width: 443px
+}
+.root61 #process-03 {
+    width: 632px
+}
+.root61 #process-020,
+.root61 #process-04 {
+    width: 821px
+}
+.root61 #process-020 .proce {
+    width: 310px;
+    height: 12px;
+    background: url(../images/proce-icons04.png) 0 0
+}
+.root61 #process-020 .icon-request-cancel {
+    background-position: -536px 0
+}
+.root61 #process-020 .doing .txt2 {
+    color: #71b247;
+    font-weight: 700
+}
+.root61 #process-020 .doing .icon-start {
+    background-position: -263px -260px
+}
+.root61 #process-020 .doing .icon-request-cancel {
+    background-position: -536px -55px
+}
+.root61 #process-020 .ready .icon-request-cancel {
+    background-position: -536px -106px
+}
+.root61 .order-track .track-tab {
+    width: 325px
+}
+.root61 .order-track .track-tab ul {
+    width: 328px
+}
+.root61 .order-track .track-tab .tab-item {
+    width: 162px
+}
+.root61 .order-track .track-tab-single .tab-item {
+    width: 325px
+}
+.root61 .order-track .track-lcol {
+    width: 285px
+}
+.root61 .order-track .track-rcol {
+    width: 880px
+}
+.root61 .order-track .p-item {
+    background-position: left top
+}
+.root61 .order-track .p-item .p-img {
+    margin: 4px 0 0
+}
+.root61 .order-track .p-item .p-info {
+    width: 158px;
+    margin-left: 15px
+}
+.root61 .order-track .install-item .p-name {
+    width: 220px
+}
+.root61 .order-track .track-list li .txt {
+    max-width: 640px
+}
+.root61 .order-track .track-list-date li .txt {
+    max-width: 520px
+}
+.root61 .order-track .gis-box .gis-arr {
+    left: 140px
+}
+.root61 .order-track #install-scrollbar {
+    width: 305px
+}
+.root61 .package-track .p-item .p-info {
+    width: 210px;
+    margin-left: 0
+}
+.root61 .order-info {
+    height: 288px;
+    overflow: hidden
+}
+.root61 .order-info .dl {
+    width: 262px;
+    height: 288px;
+    padding: 0 10px 0 30px;
+    margin: 0 0 0 -1px;
+    border-width: 0 0 0 1px
+}
+.root61 .order-info .info-rcol {
+    width: 178px
+}
+.root61 .order-info .ui-switchable-panel {
+    width: 1210px
+}
+.root61 .order-info .ui-switchable-body {
+    height: 288px
+}
+.root61 .order-info .info-page a {
+    margin-top: -28px
+}
+.root61 .goods-list .col-goods {
+    width: 500px
+}
+.root61 .goods-list td {
+    padding: 17px 0 20px
+}
+.root61 .goods-list td.grap {
+    padding: 0
+}
+.root61 .goods-list .p-info {
+    width: 355px
+}
+/* user-order/0.0.1 order-process.css Date:2017-10-26 20:58:10 */
+@charset "UTF-8";
+.order-process {
+    display: inline-block;
+    /*display: block;*/
+    margin: 38px 0 96px
+}
+.order-process:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+* html .order-process {
+    height: 1%
+}
+* + html .order-process {
+    min-height: 1%
+}
+.order-process ul {
+    position: absolute;
+    width: 100%;
+    margin-top: -38px;
+    text-align: center
+}
+.order-process .txt1 {
+    height: 36px;
+    margin-bottom: 53px;
+    font-size: 12px
+}
+.order-process .txt2 {
+    font-size: 14px;
+    line-height: 25px;
+    color: #aaa
+}
+.order-process .txt3 {
+    color: #aaa;
+    line-height: 15px
+}
+.order-process .node {
+    position: relative;
+    top: -17px;
+    float: left;
+    width: 45px;
+    height: 43px
+}
+.order-process .node .node-icon {
+    position: absolute;
+    display: block;
+    left: 1px;
+    top: 0;
+    width: 43px;
+    height: 43px;
+    background: url(../images/node-icons.png) no-repeat;
+    overflow: hidden
+}
+.order-process .node .icon-start {
+    background-position: 0 -108px
+}
+.order-process .node .icon-pay {
+    background-position: -54px 0
+}
+.order-process .node .icon-store {
+    background-position: -108px 0
+}
+.order-process .node .icon-cabinet {
+    background-position: -162px 0
+}
+.order-process .node .icon-finish {
+    background-position: -216px 0
+}
+.order-process .node .icon-express {
+    background-position: -270px 0
+}
+.order-process .node .icon-request-cancel {
+    background-position: -2px -311px
+}
+.order-process .node .icon-prepare-refund {
+    background-position: -51px -309px
+}
+.order-process .node .icon-cancel {
+    background-position: -159px -310px
+}
+.order-process .node ul {
+    z-index: 1;
+    width: 189px;
+    margin-left: -62px
+}
+.order-process .proce {
+    position: relative;
+    float: left;
+    width: 104px;
+    height: 9px;
+    background: url(../images/proce-icons02.png) no-repeat
+}
+.order-process .done {
+    background-position: 0 -38px
+}
+.order-process .done .txt1 {
+    color: #71b247;
+    font-weight: 700
+}
+.order-process .doing {
+    background-position: 0 0
+}
+.order-process .doing .txt1,
+.order-process .doing .txt2 {
+    color: #71b247;
+    font-weight: 700
+}
+.order-process .doing .icon-start {
+    background-position: 0 -54px
+}
+.order-process .doing .icon-pay {
+    background-position: -54px -54px
+}
+.order-process .doing .icon-store {
+    background-position: -108px -54px
+}
+.order-process .doing .icon-cabinet {
+    background-position: -162px -54px
+}
+.order-process .doing .icon-finish {
+    background-position: -216px -54px
+}
+.order-process .doing .icon-express {
+    background-position: -270px -54px
+}
+.order-process .ready .txt2,
+.order-process .ready .txt3 {
+    color: #333
+}
+.order-process .ready .icon-start {
+    background-position: 0 -108px
+}
+.order-process .ready .icon-pay {
+    background-position: -54px -108px
+}
+.order-process .ready .icon-store {
+    background-position: -108px -108px
+}
+.order-process .ready .icon-cabinet {
+    background-position: -162px -108px
+}
+.order-process .ready .icon-finish {
+    background-position: -216px -54px
+}
+.order-process .ready .icon-express {
+    background-position: -270px -108px
+}
+.order-process .ready .icon-request-cancel {
+    background-position: -1px -263px
+}
+.order-process .ready .icon-prepare-refund {
+    background-position: -52px -261px
+}
+.order-process .ready .icon-cancel {
+    background-position: -159px -261px
+}
+.order-process .wait {
+    background-position: 0 -19px
+}

@@ -1,0 +1,154 @@
+*{ touch-action: none; }
+.weui-cells:before,.weui-cells:after,.weui-cell:before,.weui-cell:after{
+    border-top: none !important;
+    border-bottom: none !important;
+}
+.zj-mobile__input{
+    margin-bottom: 10px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+.zj-mobile__cover{
+    background-color: rgba(0,0,0,.5);width:100vw;height:100vh;position: fixed;left:0;top:0;z-index: 999;
+    text-align: center;
+}
+.zj-mobile__title{
+    color:#ffffff;
+}
+.zj-mobile__btn_primary{
+    background-color: #ffffff;
+    color: #006FFF;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    border-radius:30px;
+    padding: 12px 24px;
+}
+.zj-mobile__btn_msg{
+    color: #ffffff !important;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 30px;
+    padding: 3px 2px;
+    text-align: center;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+}
+.zj-mobile__line:before{
+    content: '';
+    left: 56px;
+    top: 7px;
+    height: 26px;
+    position: absolute;
+    width: 1px;
+    background-color: rgba(255,255,255,.3);
+}
+.weui-cells{
+    padding: 0 50px;
+}
+.weui-label{
+    width:40px !important;
+    color: #ffffff;
+    text-align: right;
+}
+.page{
+    background-color: #006eff !important;
+    background: url("../m-images/cloud_bg.png") no-repeat;
+    background-size: 100% 100vh;
+    background-position: center center;
+}
+.weui-form{
+    background-color: transparent;
+}
+.weui-cells{
+    background-color: transparent;
+}
+.weui-form__text-area{
+    text-align: left;
+    padding: 0 50px !important;
+}
+.weui-input{
+    color: #ffffff;
+}
+.weui-cells__group_form .weui-cell {
+    padding: 10px 10px !important;
+}
+.zj-mobile__select-title{
+    color:#ffffff !important;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 5px;
+}
+.zj-mobile__select-list{
+    padding: 2px 0 0;
+}
+.zj-mobile__select-list ul{
+    display: table;
+    margin: 0 auto;
+}
+.zj-mobile__select-list ul li{
+    display: inline-block;
+    color: #ffffff !important;
+    width: 24vw;
+    padding: 5px 7px;
+}
+.zj-mobile__select-list ul li div{
+    width: 100%;
+    padding: 1px 0;
+    background-color: rgba(255,255,255,.3);
+    border-radius: 20px;
+    text-indent: 32px;
+    background-size: 14px;
+    background-position: 12px center;
+    position: relative;
+    font-size: 14px;
+}
+.zj-mobile__select-list ul li div i{
+    display: none;
+    position: absolute;
+    right:5px;
+    bottom:-4px;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    background-color: #00B4FF !important;
+    color: #ffffff !important;
+    text-indent: 0 !important;
+    border-radius: 50%;
+}
+.active div i{
+    display: block !important;
+}
+.zj-mobile__select_sjs{
+    background: url("../m-images/white_shejishi.png") no-repeat;
+}
+.active .zj-mobile__select_sjs{
+    background: url("../m-images/blue_shejishi.png") no-repeat;
+    background-color: rgba(255,255,255,.8);
+    color: #0049FF !important;
+    background-size: 14px;
+    background-position: 12px center;
+}
+.zj-mobile__select_fz{
+    background: url("../m-images/white_fangzhu.png") no-repeat;
+}
+.active .zj-mobile__select_fz{
+    background: url("../m-images/blue_fangzhu.png") no-repeat;
+    background-color: rgba(255,255,255,.8);
+    color: #0049FF !important;
+    background-size: 14px;
+    background-position: 12px center;
+}
+.zj-mobile__select_xs{
+    background: url("../m-images/white_xiaoshou.png") no-repeat;
+}
+.active .zj-mobile__select_xs{
+    background: url("../m-images/blue_xiaoshou.png") no-repeat;
+    background-color: rgba(255,255,255,.8);
+    color: #0049FF !important;
+    background-size: 14px;
+    background-position: 12px center;
+}
+.weui-form__control-area{
+    margin-top: 30px;
+}

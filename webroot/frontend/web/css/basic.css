@@ -1,0 +1,49 @@
+.media .media {
+    padding-bottom: 0;
+    border-bottom: none
+}
+.media-meta {
+    font-size: .858rem;
+    margin-bottom: 3px;
+    color: #a3afb7
+}
+.media-lg .media-object {
+    width: 160px
+}
+.media-lg .media {
+    margin-left: -110px
+}
+.media-sm .media-object {
+    width: 80px
+}
+.media-sm .media {
+    margin-left: -70px
+}
+.media-xs .media-object {
+    width: 60px
+}
+.media-xs .media {
+    margin-left: -60px
+}
+@media (min-width:768px) {
+    .media-body {
+        overflow: hidden
+    }
+    .media .media {
+        margin-left: 0
+    }
+}
+@media (max-width:479px) {
+    .media-lg .media {
+        margin-left: 0
+    }
+    .media .media-left {
+        margin-bottom: 5px
+    }
+    .media .media {
+        padding-left: 15px
+    }
+    .media-left {
+        display: block
+    }
+}

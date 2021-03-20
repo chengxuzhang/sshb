@@ -1,0 +1,170 @@
+.zj_mobile_aivr_up{
+    background: url("../m-images/aivr/up.png") no-repeat;
+    background-size: 100% 100%;
+}
+.zj_mobile_aivr_down{
+    background: url("../m-images/aivr/down.png") no-repeat;
+    background-size: 100% 100%;
+}
+.zj_mobile_aivr{
+    position: relative;
+}
+.zj_mobile_aivr .box{
+    vertical-align: middle;
+    height: 100%;
+    text-align: center;
+}
+.zj_mobile_aivr .box span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.zj_mobile_aivr .box a{
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 40px;
+    left: 50%;
+    margin-left: -50px;
+    line-height: 40px;
+}
+.zj_mobile_aivr .box span.title{
+    font-size:3rem;
+    font-family:MicrosoftYaHei-Bold;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+}
+.zj_mobile_aivr .box span.remark{
+    font-size:1.5rem;
+    font-family:STXihei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    /*line-height:40px;*/
+}
+.zj_mobile_aivr_up .box span.title{
+    top:37%;
+}
+.zj_mobile_aivr_up .box span.remark{
+    top:42%;
+}
+.zj_mobile_aivr_up .box a{
+    top:45%;
+    background:rgba(0,110,255,0);
+    border:1px solid #006EFF;
+    font-size:1.5rem;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(0,245,255,1);
+}
+.zj_mobile_aivr_down .box span.title{
+    top:34%;
+}
+.zj_mobile_aivr_down .box span.remark{
+    top:39%;
+}
+.zj_mobile_aivr_down .box a{
+    top:42%;
+    background:rgba(0,110,255,0);
+    border:1px solid #006EFF;
+    font-size:1.5rem;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(0,245,255,1);
+}
+
+/*媒体查询*/
+@media screen and (max-width: 980px) {
+    .ai_banner{
+        width: 100%;
+        height: 200px !important;
+        margin-top: 50px;
+    }
+    .bim_banner_con{
+        width:100%;
+        height: 200px;
+        background: url("../m-images/aivr/banner_vr.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .vr_banner_con{
+        width:100%;
+        height: 200px;
+        background: url("../m-images/aivr/banner_ai.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .vr_banner_con h3 {
+        font-size: 22px;
+        color: #FFFFFF;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .bim_banner_con h3{
+        font-size: 24px;
+        color: #FFFFFF;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+    .vr_yzx {
+        font-size: 16px;
+        color: #D3D3D3;
+        margin-bottom: 30px;
+    }
+    .img-list img{
+        width: 100%;
+        height: auto;
+    }
+    .zj_nav3_blue_bg_div{
+        height: 180px;
+        background-size: 100% 180px;
+        padding-top: 30px;
+    }
+    .zj_nav3_blue_bg_div span.title{
+        font-size: 20px;
+    }
+    .zj_nav3_blue_bg_div div.p a {
+        width: 127px;
+        height: 43px;
+        line-height: 43px;
+        font-size: 16px;
+    }
+    .zj_nav3_blue_bg_div div.p{
+        margin-top: 10px;
+    }
+    .ai-video{
+        background: url("../m-images/aivr/ai2.png") no-repeat;
+        -webkit-background-size:100% 100%;
+        background-size:100% 100%;
+        height: 300px;
+    }
+    .ai-video .remark{
+        margin-top: 20px;
+        width: 100%;
+    }
+    .ai-video .remark span{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size:12px;
+        font-family:MicrosoftYaHei;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+    }
+    .video-js .vjs-big-play-button {
+        margin-top: 65px;
+        margin-left: -45px;
+    }
+    .video-js .vjs-big-play-button {
+        left: 50% !important;
+        top: 50% !important;
+        width: 90px !important;
+        line-height: 90px !important;
+        text-align: center !important;
+        height: 90px !important;
+        border-radius: 50% !important;
+        border: none !important;
+        font-size: 70px !important;
+        background: rgba(0, 0, 0, 0.42) !important;
+        color: #d1d1d1;
+    }
+}

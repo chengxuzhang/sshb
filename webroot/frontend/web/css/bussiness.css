@@ -1,0 +1,523 @@
+/*地图样式*/
+
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+/**html .clearfix{height:1%}*/
+
+
+.map-service{
+    position:relative;
+    height:590px;width:716px;float:right;
+    /*background:url(../images/4_slices/map_balck_whole_bg.jpg) center no-repeat;*/
+    /*background-size: 100% 100%;*/
+}
+.map-service-right{margin-left:414px;padding-top:60px}
+.china-map{
+    width:716px;
+    height:590px;
+    background:url(../images/4_slices/map_black_bg.png) center no-repeat;
+    position:relative;
+    float: right;
+    background-size: 100% 100%;
+}
+.region-list{position:absolute;left:0;top:0}
+
+@-webkit-keyframes warn{
+    0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}
+    100%{-webkit-transform:scale(1);transform:scale(1);opacity:0}
+}
+@-moz-keyframes warn{
+    0%{-moz-transform:scale(0);transform:scale(0);opacity:1}
+    100%{-moz-transform:scale(1);transform:scale(1);opacity:0}
+}
+@-o-keyframes warn{
+    0%{-o-transform:scale(0);transform:scale(0);opacity:1}
+    100%{-o-transform:scale(1);transform:scale(1);opacity:0}
+}
+@keyframes warn{
+    0%{-webkit-transform:scale(0);-moz-transform:scale(0);-o-transform:scale(0);transform:scale(0);opacity:1}
+    100%{-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);transform:scale(1);opacity:0}
+}
+.area-box .dot{position:absolute;left:0;width:10px;height:10px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;background:#a2a9b4;opacity:1;filter:alpha(opacity=100)}
+.area-box .pulse{position:absolute;top:-28px;left:-28px;height:66px;width:66px;border:2px solid #b7b7b7;-webkit-border-radius:48px;-moz-border-radius:48px;border-radius:48px;-webkit-box-shadow:0 0 4px #82878f,0 0 10px #82878f inset;-moz-box-shadow:0 0 4px #82878f,0 0 10px #82878f inset;box-shadow:0 0 4px #82878f,0 0 10px #82878f inset;opacity:.12;filter:alpha(opacity=0);-webkit-animation:warn 2s ease-out both;-moz-animation:warn 2s ease-out both;-o-animation:warn 2s ease-out both;animation:warn 2s ease-out both;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;-o-animation-iteration-count:infinite;animation-iteration-count:infinite;background:0 0}
+.area-box .delay-01{-webkit-animation-delay:0;-moz-animation-delay:0;-o-animation-delay:0;animation-delay:0}
+.area-box .delay-02{-webkit-animation-delay:.4s;-moz-animation-delay:.4s;-o-animation-delay:.4s;animation-delay:.4s}
+.area-box .delay-03{-webkit-animation-delay:.8s;-moz-animation-delay:.8s;-o-animation-delay:.8s;animation-delay:.8s}
+.area-box .delay-04{-webkit-animation-delay:1.2s;-moz-animation-delay:1.2s;-o-animation-delay:1.2s;animation-delay:1.2s}
+.area-box .delay-05{-webkit-animation-delay:1.6s;-moz-animation-delay:1.6s;-o-animation-delay:1.6s;animation-delay:1.6s}
+.area-box .delay-06{-webkit-animation-delay:2s;-moz-animation-delay:2s;-o-animation-delay:2s;animation-delay:2s}
+.area-box .delay-07{-webkit-animation-delay:2.4s;-moz-animation-delay:2.4s;-o-animation-delay:2.4s;animation-delay:2.4s}
+.area-box .delay-08{-webkit-animation-delay:-.4s;-moz-animation-delay:-.4s;-o-animation-delay:-.4s;animation-delay:-.4s}
+.area-box .delay-09{-webkit-animation-delay:-.8s;-moz-animation-delay:-.8s;-o-animation-delay:-.8s;animation-delay:-.8s}
+.area-box .delay-10{-webkit-animation-delay:-1.2s;-moz-animation-delay:-1.2s;-o-animation-delay:-1.2s;animation-delay:-1.2s}
+.area-box .delay-11{-webkit-animation-delay:4s;-moz-animation-delay:4s;-o-animation-delay:4s;animation-delay:4s}
+.region-list.active .area-box .dot{background:#009fd9}
+.region-list.active .area-box .pulse{border-color:#009fd9;top:-39px;left:-39px;height:88px;width:88px;-webkit-box-shadow:0 0 12px #0080d9,0 0 20px #0080d9 inset;-moz-box-shadow:0 0 12px #0080d9,0 0 20px #0080d9 inset;box-shadow:0 0 12px #0080d9,0 0 20px #0080d9 inset}
+.region-list.waite .area-box .dot{background:#f90}
+.region-list.waite .area-box .pulse{border-color:#f90}
+.show-regin{position:absolute;left:2px;height:0;top:0;width:11px;opacity:0;-o-transition:all .5s ease-in-out;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
+.online-node .show-regin,.region-list:hover .show-regin,.underline-node .show-regin,.waite-node .show-regin{height:127px;opacity:1}
+.show-regin span{width:80px;position:absolute;left:8px;top:-11px;padding:6px 10px;font-size:14px;color:#ccc;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;text-align:center;white-space:nowrap;}
+.postition-10 .show-regin span{left:0}
+.postition-6 .show-regin span{left:-72px}
+.area-box{z-index:77}
+.show-regin{z-index:66}
+.region-list.active .show-regin span{position:relative;color:#ccc}
+.region-list.waite .show-regin span{color:#ccc}
+.postition-1{left:302px;top:308px}
+.postition-2{
+    left: 385px;
+    top: 376px;
+}
+.postition-3{left:358px;top:516px}
+.postition-4{
+    left: 456px;
+    top: 335px;
+}
+.postition-5{
+    left: 500px;
+    top: 374px;
+}
+.postition-6{left:526px;top:515px}
+.postition-7{
+    left: 623px;
+    top: 192px;
+}
+.postition-7.region-list.active .area-box .pulse{top:-50px;left:-50px;width:110px;height:110px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%}
+.postition-8{
+    left: 540px;
+    top: 221px;
+}
+.postition-9{
+    left: 612px;
+    top: 353px;
+}
+.postition-9.region-list.active .area-box .pulse{top:-50px;left:-50px;width:110px;height:110px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%}
+.postition-10{left:554px;top:539px}
+.postition-11{
+    left: 575px;
+    top: 282px;
+}
+.postition-13{
+    left: 427px;
+    top: 224px;
+}
+.douhao{width:0}
+
+
+.zj_bussiness_banner{
+    background: url("../images/4_slices/map_balck_whole_bg.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 714px;
+}
+.zj_bussiness_banner .map{
+    width: 1200px;
+    margin: 0 auto;
+}
+.zj_bussiness_banner .map .remark{
+    float: left;
+    width: 350px;
+}
+.zj_bussiness_banner .map .remark p.title{
+    font-size:48px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-top: 185px;
+}
+.zj_bussiness_banner .map .remark p.tip{
+    font-size:24px;
+    font-family:STXihei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-top: 43px;
+}
+.zj_bussiness_banner .map .remark a{
+    width:187px;
+    height:68px;
+    border:1px solid rgba(0,245,255,1);
+    display: block;
+    font-size:24px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(0,245,255,1);
+    line-height: 68px;
+    text-align: center;
+    margin-top: 119px;
+    text-decoration: none;
+}
+.zj_bussiness_banner .map .remark a:hover{
+    background-color:#02EBF5;
+    color:rgba(255,255,255,1);
+}
+.zj_bussiness_youshi{
+    width: 1200px;
+    margin: 0 auto;
+}
+.zj_bussiness_youshi .title{
+    font-size:36px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(26,26,26,1);
+    text-align: center;
+    margin-top: 74px;
+    margin-bottom: 104px;
+}
+.zj_bussiness_youshi .list ul li{
+    float:left;
+    margin: 0 50px;
+    width:300px;
+}
+.zj_bussiness_youshi .list ul li img{
+    width:52px;
+    height:52px;
+}
+.zj_bussiness_youshi .list ul li span{
+    display: block;
+    width: 100%;
+}
+.zj_bussiness_youshi .list ul li span.t{
+    font-size:24px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(26,26,26,1);
+    margin-top: 22px;
+}
+.zj_bussiness_youshi .list ul li hr{
+    width:58px;
+    height:2px;
+    background:rgba(0,0,0,1);
+}
+.zj_bussiness_youshi .list ul li span.tip{
+    font-size:14px;
+    font-family:STXihei;
+    font-weight:400;
+    color:rgba(26,26,26,1);
+    margin-top: 16px;
+}
+.zj_bussiness_bz{
+    width:1200px;
+    margin: 0 auto;
+}
+.zj_bussiness_bz .title{
+    font-size:36px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(26,26,26,1);
+    margin-top: 184px;
+    text-align: center;
+}
+.zj_bussiness_bz .list{
+    margin-top: 82px;
+    padding-left: 80px;
+}
+.zj_bussiness_bz .list ul li{
+    float: left;
+    width: 540px;
+    margin-right: 20px;
+}
+.zj_bussiness_bz .list ul li.level2{
+    margin-top: 54px;
+}
+.zj_bussiness_bz .list ul li span{
+    display: inline-block;
+}
+.zj_bussiness_bz .list ul li span:first-child{
+    width:54px;
+    height:50px;
+    background: url("../images/4_slices/k.png") no-repeat;
+    background-size: 100% 100%;
+    font-size:28px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(0,0,0,1);
+    line-height: 50px;
+    text-align: center;
+}
+.zj_bussiness_bz .list ul li span:last-child{
+    font-size:18px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(26,26,26,1);
+    margin-left: 20px;
+    height: 50px;
+    line-height: 50px;
+}
+.zj_bussiness_jm{
+    width: 1200px;
+    margin: 0 auto;
+}
+.zj_bussiness_jm .title{
+    margin-top: 205px;
+    margin-bottom: 57px;
+    font-size:36px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(26,26,26,1);
+    text-align: center;
+}
+.zj_bussiness_jm .list{
+    position: relative;
+    height: 360px;
+}
+.zj_bussiness_jm .list div._{
+    height:28px;
+    font-size:28px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(130,130,130,1);
+    line-height: 28px;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom: 0;
+}
+.zj_bussiness_jm .list ul li{
+    float:left;
+    width: 260px;
+    margin: 0 20px;
+}
+.zj_bussiness_jm .list ul li .block{
+    width:260px;
+    height:275px;
+    padding-top: 25px;
+}
+.zj_bussiness_jm .list ul li .block .img{
+    width: 80px;
+    height:84px;
+    margin: 0 auto;
+}
+.zj_bussiness_jm .list ul li .block img{
+    width: 80px;
+    height:84px;
+}
+.zj_bussiness_jm .list ul li .block span{
+    width: 100%;
+    display: block;
+}
+.zj_bussiness_jm .list ul li .block span.t{
+    font-size:24px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    text-align: center;
+    margin-top: 19px;
+}
+.zj_bussiness_jm .list ul li .block span.circle{
+    width:84px;
+    height:84px;
+    background:rgba(255,255,255,1);
+    border-radius:50%;
+    margin: 18px auto 0;
+    font-size:30px;
+    font-family:Arial-Black;
+    font-weight:900;
+    text-align: center;
+    line-height: 84px;
+}
+.zj_bussiness_jm .list ul li .line1{
+    width: 260px;
+    height: 95px;
+}
+.zj_bussiness_jm .list ul li .line1 ._{
+    height:3px;
+    font-size:28px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(130,130,130,1);
+    line-height: 3px;
+    text-align: center;
+    overflow: hidden;
+    width: 260px;
+}
+.zj_bussiness_jm .list ul li .line1 ._:before{
+    position: absolute;
+    left:50%;
+    margin-left:-6px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    top:-2px;
+}
+.zj_bussiness_jm .list ul li .line1 .l{
+    width: 5px;
+    margin: 0 auto;
+    height: 87px;
+    font-size: 30px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    text-align: center;
+    flex-wrap: inherit;
+    /*overflow: hidden;*/
+    word-wrap: break-word;
+    line-height: 8px;
+    margin-top: -10px;
+    position: relative;
+}
+.zj_bussiness_jm .list ul li .line1 .l:before{
+    content: "";
+    position: absolute;
+    left:-2px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    bottom: -9px;
+}
+.zj_bussiness_jm .list ul li:nth-child(1) .block,.zj_bussiness_jm .list ul li:nth-child(1) .line1 .l:before{
+    background-color:rgba(255, 152, 127, 1);
+}
+.zj_bussiness_jm .list ul li:nth-child(1) .line1 .l,.zj_bussiness_jm .list ul li:nth-child(1) .block span.circle{
+    color:rgba(255, 152, 127, 1);
+}
+.zj_bussiness_jm .list ul li:nth-child(2) .block,.zj_bussiness_jm .list ul li:nth-child(2) .line1 .l:before{
+    background-color: rgba(255, 213, 102, 1);
+}
+.zj_bussiness_jm .list ul li:nth-child(2) .line1 .l,.zj_bussiness_jm .list ul li:nth-child(2) .block span.circle{
+    color:rgba(255, 213, 102, 1);
+}
+.zj_bussiness_jm .list ul li:nth-child(3) .block,.zj_bussiness_jm .list ul li:nth-child(3) .line1 .l:before{
+    background-color: rgba(78, 203, 234, 1);
+}
+.zj_bussiness_jm .list ul li:nth-child(3) .line1 .l,.zj_bussiness_jm .list ul li:nth-child(3) .block span.circle{
+    color:rgba(78, 203, 234, 1);
+}
+.zj_bussiness_jm .list ul li:nth-child(4) .block,.zj_bussiness_jm .list ul li:nth-child(4) .line1 .l:before{
+    background-color: rgba(81, 209, 134, 1);
+}
+.zj_bussiness_jm .list ul li:nth-child(4) .line1 .l,.zj_bussiness_jm .list ul li:nth-child(4) .block span.circle{
+    color:rgba(81, 209, 134, 1);
+}
+.zj_bussiness_add{
+    text-align: center;
+    margin-top: 100px;
+}
+.zj_bussiness_add a{
+    display: inline-block;
+    width:214px;
+    height:68px;
+    background:rgba(0,110,255,0);
+    border:2px solid rgba(26, 26, 26, 1);
+    font-size:24px;
+    font-family:MicrosoftYaHei-Bold;
+    font-weight:bold;
+    color:rgba(26,26,26,1);
+    line-height: 64px;
+    text-align: center;
+    text-decoration: none;
+}
+.zj_bussiness_add a:hover{
+    background-color: #1a1a1a;
+    color: white;
+}
+/*媒体查询*/
+@media screen and (max-width: 980px) {
+    .zj_bussiness_banner .map{
+        width: 100%;
+    }
+    .zj_bussiness_banner .map .remark{
+        width: 100%;
+    }
+    .zj_bussiness_banner .map .remark p{
+        text-align: center;
+    }
+    .zj_bussiness_banner .map .remark p.title {
+        font-size: 28px;
+        font-family: MicrosoftYaHei;
+        font-weight: 400;
+        color: rgba(255,255,255,1);
+        margin-top: 15px;
+    }
+    .zj_bussiness_banner .map .remark a {
+        width: 127px;
+        height: 48px;
+        border: 1px solid rgba(0,245,255,1);
+        display: block;
+        font-size: 20px;
+        font-family: MicrosoftYaHei;
+        font-weight: 400;
+        color: rgba(0,245,255,1);
+        line-height: 46px;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px auto;
+    }
+    .zj_bussiness_banner .map .remark p.tip {
+        margin-top: 14px;
+        font-size: 14px;
+    }
+    .map-service-right {
+         margin-left: 0;
+         padding-top: 0;
+    }
+    .china-map {
+        width: 350px;
+        height: 290px;
+        background: url(../images/4_slices/map_black_bg.png) center no-repeat;
+        position: relative;
+        background-size: 100% 100%;
+        margin: 0 auto;
+        float: none;
+    }
+    .map-service{
+        width: 100%;
+        height: auto;
+    }
+    .zj_bussiness_banner{
+        height: 514px;
+    }
+    .postition-2 {
+        left: 191px;
+        top: 185px;
+    }
+    .postition-4 {
+        left: 222px;
+        top: 169px;
+    }
+    .postition-5 {
+        left: 242px;
+        top: 188px;
+    }
+    .postition-6 {
+        left: 241px;
+        top: 260px;
+    }
+    .postition-13 {
+        left: 197px;
+        top: 108px;
+    }
+    .postition-11 {
+        left: 273px;
+        top: 141px;
+    }
+    .postition-7 {
+        left: 299px;
+        top: 91px;
+    }
+    .postition-8 {
+        left: 256px;
+        top: 114px;
+    }
+    .postition-9 {
+        left: 294px;
+        top: 174px;
+    }
+    .img-list img{
+        width: 100%;
+        height: auto;
+    }
+    .img-list a{
+        width: 127px;
+        height: 48px;
+        background:rgba(0,110,255,0);
+        border:2px solid rgba(26, 26, 26, 1);
+        display: block;
+        margin: 0 auto;
+        font-size:18px;
+        font-family:MicrosoftYaHei-Bold;
+        font-weight:bold;
+        color:rgba(26,26,26,1);
+        text-align: center;
+        line-height: 44px;
+    }
+}

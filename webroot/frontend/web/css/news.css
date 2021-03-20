@@ -1,0 +1,251 @@
+#zSlider {
+    margin: 20px auto;
+    width: 1200px;
+    overflow: hidden
+}
+
+#picshow {
+    position: relative
+}
+
+#picshow, #picshow_img {
+    width: 880px;
+    height: 450px;
+    overflow: hidden;
+}
+
+#picshow_img li {
+    width: 880px;
+    height: 450px;
+    overflow: hidden;
+    display: none
+}
+
+#picshow_img img {
+    width: 880px;
+    height: 450px
+}
+
+#picshow_tx {
+    left: 0;
+    width: 880px;
+    bottom: 0;
+    position: absolute;
+    height: 90px;
+    overflow: hidden
+}
+
+#picshow_tx li {
+    background: url(../images/picshow_bg.png) repeat;
+    padding: 10px 30px;
+    height: 90px;
+    color: #fff;
+    display: none
+}
+
+#picshow_tx li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#picshow_tx li h3 {
+    margin: 13px 0
+}
+
+#picshow_tx li p {
+    color: #ccc;
+    line-height: 16px;
+    height: 16px;
+    overflow: hidden
+}
+
+#select_btn {
+    width: 319px;
+    height: 450px;
+    color: #111;
+    float: right;
+    display: inline;
+    background-color: #f0f0f0
+}
+
+#select_btn li {
+    padding: 9px 11px 0 9px;
+    height: 150px;
+    border-top: 1px solid #eeeeff;
+    cursor: pointer;
+}
+
+#select_btn li.current {
+    background-color: #006eff
+}
+
+#select_btn li.current a {
+    color: #f0f8ff
+}
+
+#select_btn a {
+    color: #000;
+    text-decoration: none;
+}
+
+#select_btn img {
+    padding: 2px;
+    border: 1px solid #ccc;
+    width: 70px;
+    height: 49px;
+    margin-right: 10px;
+}
+
+#select_btn .select_text {
+    font: bold 18px 'Microsoft YaHei';
+    overflow: hidden;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    height: 24px;
+}
+
+#select_btn .select_date {
+    font-size: 12px;
+    line-height: 24px;
+    display: block;
+    text-decoration: none;
+    height: 78px;
+    overflow: hidden;
+}
+
+#foot_bm a, #foot_bm, p, p a {
+    color: #666
+}
+
+.article-list{
+    margin: 20px auto;
+    width: 1200px;
+}
+
+.article-list .news{
+    height: 240px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eeeeff;
+}
+
+.article-list .news .news-img{
+    width:280px;
+    height:200px;
+}
+
+.article-list .news img{
+    width: 280px;
+    height: 200px;
+    margin-right: 14px;
+}
+
+.article-list .news .news-title{
+    width:920px;
+    height:200px;
+    padding: 30px;
+}
+
+.article-list .news div.title{
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.article-list .news div.title span.title-title{
+    font-size: 20px;
+    width: 100%;
+    line-height: 20px;
+    text-align: left;
+}
+
+.article-list .news div.title span.title-time{
+    font-size:12px;
+    float: right;
+}
+
+.article-list .news span.description{
+    font-size: 14px;
+    display: block;
+    line-height: 30px;
+    text-align: left;
+    padding-left: 20px;
+    color:#1a1a1a;
+    margin-top: 10px;
+    width: 700px;
+}
+
+.article-page{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article-page a{
+    padding: 6px 14px;
+    border: 1px solid #006eff;
+    color:#1a1a1a;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.article-page a.current{
+    background-color: #006eff;
+    color: #FFFFFF;
+    border-color: #006eff;
+}
+
+@media (min-width: 1200px){
+    .news-content {
+        width: 1170px;
+    }
+}
+@media (min-width: 992px){
+    .news-content {
+        width: 970px;
+    }
+}
+
+@media (min-width: 768px){
+    .news-content {
+        width: 750px;
+    }
+}
+
+@media (min-width: 480px){
+    .news-content {
+        width: 606px;
+    }
+}
+
+.news-content{
+    border: 1px solid #eee;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 100%;
+    padding-right: .9375rem;
+    padding-left: .9375rem;
+}
+
+.news-content .news-body h1{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.news-content .news-body h4{
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+    color: #1bbc9b;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.news-top-bg{
+    width: 100%;
+    height: 388px;
+    background: url('../images/news_bg.jpg') no-repeat;
+    background-size: 100% 100%;
+}
