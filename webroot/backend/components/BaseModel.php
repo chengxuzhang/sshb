@@ -10,8 +10,8 @@ class BaseModel extends \yii\db\ActiveRecord implements BackGlobalConst
 {
 	public $pageSize = 10;
     public $commonStatus = [
-        self::COMMON_STATUS_ACTIVE => '符合',
-        self::COMMON_STATUS_DELETED => '不符合',
+        self::COMMON_STATUS_ACTIVE => '是',
+        self::COMMON_STATUS_DELETED => '否',
     ];
     public $result = [
         "status" => 200,

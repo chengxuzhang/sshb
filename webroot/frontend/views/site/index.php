@@ -28,16 +28,19 @@ $this->title = CacheConfig::getConfigCache("title");
             <div class="row">
                 <div class="social pull-left topbar-left">
                     <ul>
-                        <li class="top-phone"><a href="tel:4008-888-888" class="hvr-bounce-to-bottom"><i class="fa fa-phone"></i> 4008-888-888</a></li>
-                        <li class="top-email"><a href="mailto:XXX@qq.com" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i> XXX@qq.com</a></li>
+                        <li class="top-phone"><a href="tel:<?= CacheConfig::getConfigCache("phone") ?>" class="hvr-bounce-to-bottom"><i class="fa fa-phone"></i>
+                            <?= CacheConfig::getConfigCache("phone") ?>
+                            </a></li>
+                        <li class="top-email"><a href="mailto:XXX@qq.com" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i>
+                                <?= CacheConfig::getConfigCache("email") ?>
+                            </a></li>
                     </ul>
                 </div>
                 <div class="contact-info pull-right topbar-right">
                     <ul>
-                        <li><a href="http://www.weibo.com/gooxao" target="_blank"><i class="fa fa-weibo"></i></a></li>
-                        <li><a href="http://t.qq.com/gooxao2" target="_blank"><i class="fa fa-tencent-weibo"></i></a></li>
+                        <li><a href="javascript:;" target="_blank"><i class="fa fa-weibo"></i></a></li>
+                        <li><a href="javascript:;" target="_blank"><i class="fa fa-tencent-weibo"></i></a></li>
                         <li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=XXX&amp;site=qq&amp;menu=yes" target="_blank"><i class="fa fa-qq"></i></a></li>
-                        <li><a href="https://www.tmall.com/" target="_blank"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -263,7 +266,9 @@ $this->title = CacheConfig::getConfigCache("title");
                 <div class="col-lg-offset-3 col-md-offset-3 col-lg-9 col-md-9">
                     <h2><span>精益求精，创造您空间的</span> 核心价值</h2>
                     <p>集室内设计、工程施工、材料装饰为一体的专业化中型装饰企业</p>
-                    <p class="phone-contact"><b>4008-888-888</b> 或 <a href="/a/contact/" class="hvr-bounce-to-right">联系我们</a> </p>
+                    <p class="phone-contact"><b>
+                            <?= CacheConfig::getConfigCache('phone'); ?>
+                        </b> 或 <a href="/a/contact/" class="hvr-bounce-to-right">联系我们</a> </p>
                 </div>
             </div>
         </div>
@@ -343,7 +348,9 @@ $this->title = CacheConfig::getConfigCache("title");
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs widget foot-about">
                     <h3 class="dark-title"><a href="/a/about/jianjie/">公司简介</a> </h3>
                     <div class="f-about">
-                        <p>  某某装饰设计工程有限公司是一家集室内设计、工程施工、材料装饰为一体的专业化中型装饰企业。公司成立于2012年（前身为室内设计工作室，2009年始于深圳市），现注册资金500万元，公司具有施工二级、设计乙级、承接1000万元... </p>
+                        <p>
+                            <?= CacheConfig::getConfigCache('remark'); ?>
+                        </p>
                     </div>
                     <a href="/a/about/jianjie/" class="read-more">查看更多 <i class="fa fa-angle-double-right"></i></a>
                     <ul class="social">
@@ -382,10 +389,10 @@ $this->title = CacheConfig::getConfigCache("title");
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget foot-contact hidden-sm hidden-xs">
                     <h3 class="dark-title"><a href="/contactus.html">联系信息</a></h3>
                     <ul class="contact-info">
-                        <li> <i class="fa fa-map-marker"></i> 公司地址：江苏省南京市玄武区玄武湖 </li>
-                        <li> <i class="fa fa-phone"></i> 电话：4008-888-888 </li>
-                        <li> <i class="fa fa-envelope-o"></i> 传真：+86-123-4567 </li>
-                        <li> <i class="fa fa-globe"></i> 邮箱：XXX@qq.com </li>
+                        <li> <i class="fa fa-map-marker"></i> 公司地址：<?= CacheConfig::getConfigCache('address') ?> </li>
+                        <li> <i class="fa fa-phone"></i> 电话：<?= CacheConfig::getConfigCache('phone') ?> </li>
+                        <li> <i class="fa fa-envelope-o"></i> 传真：<?= CacheConfig::getConfigCache('phone') ?> </li>
+                        <li> <i class="fa fa-globe"></i> 邮箱：<?= CacheConfig::getConfigCache('email') ?> </li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget foot-qrcode hidden-sm hidden-xs">
