@@ -1,6 +1,6 @@
 <?php
 
-$this->title = '股票分析系统';
+$this->title = '四顺环保企业网站后台管理系统';
 
 ?>
 
@@ -14,5 +14,5 @@ $this->title = '股票分析系统';
 </style>
 
 <div class="welcome">
-    欢迎访问股票分析系统
+    欢迎访问四顺环保企业网站后台管理系统
 </div>

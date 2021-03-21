@@ -36,7 +36,7 @@ use backend\components\Html;
 
 <header class="main-header">
 
-    <?= Html::a('<span class="logo-mini">股票</span><span class="logo-lg">股票分析系统</span>', Yii::$app->homeUrl.'index.php', ['class' => 'logo']) ?>
+    <?= Html::a('<span class="logo-mini">四顺</span><span class="logo-lg">四顺环保企业网站</span>', Yii::$app->homeUrl.'index.php', ['class' => 'logo']) ?>
 
     <nav class="navbar navbar-static-top" role="navigation">
 
