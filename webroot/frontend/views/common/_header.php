@@ -1,30 +1,57 @@
 <?php
+
+use yii\helpers\Url;
+
+
 $controller = Yii::$app->controller->id;
 
-$session = Yii::$app->session;
-$token = $session->set('view_type', "pc");
 ?>
-<li class="zj_guwm_menu zj_bvmenu">
-    <a href="/about.html" <?= ($controller=='about' || $controller == 'news')?'class="zj_color_current"':'' ?>>关于我们</a>
-    <ul class="zj_bmenu">
-        <li><a href="/news.html">新闻动态</a></li>
-    </ul>
-</li>
-<li class="zj_about_menu zj_bvmenu">
-    <a href="/soft.html" <?= $controller=='soft'?'class="zj_color_current"':'' ?>>下载与视频</a>
-    <ul class="zj_bmenu">
-        <li><a href="/soft.html">软件下载</a></li>
-        <li><a href="/soft.html#video">视频教程</a></li>
-    </ul>
-</li>
-<li><a href="/store.html" <?= $controller=='store'?'class="zj_color_current"':'' ?>>智慧门店</a></li>
-<li><a href="/business.html" <?= $controller=='business'?'class="zj_color_current"':'' ?>>招商加盟</a></li>
-<li class="zj_bvmenu">
-    <a href="/aivr.html" <?= $controller=='aivr'?'class="zj_color_current"':'' ?>>AI+VR云台</a>
-    <ul class="zj_bmenu">
-        <li><a href="/ai.html">AI<sup>+</sup>3D云设计系统</a></li>
-        <li><a href="/vr.html">裸眼VR云台</a></li>
-    </ul>
-</li>
-<li><a href="/design.html" <?= $controller=='design'?'class="zj_color_current"':'' ?>>智能设计</a></li>
-<li><a href="/" <?= $controller=='site'?'class="zj_color_current"':'' ?>>首页</a></li>
+<header id="header-sec" class="header">
+    <div class="search-box">
+        <div class="container">
+            <div class="pull-right search  col-lg-3 col-md-4 col-sm-5 col-xs-12">
+                <form  class="t-search-form" name="formsearch" action="/plus/search.php">
+                    <input type="hidden" name="kwtype" value="0" />
+                    <input type="text" value="" name="q" class="search-input" placeholder="输入关键字"/>
+                    <button type="submit" class="search-btn"><i class="icon icon-Search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-lg-offset-0 col-md-offset-4 logo">
+                <a href="/">
+                    <img src="<?= Url::to('@web/images/logo.png'); ?>" alt="Logo"/>
+                </a> </div>
+            <a class="mmenu-btn noDis" href="#mmenu"><i class="fa fa-bars"></i></a>
+            <nav class="col-lg-9 col-md-12 col-lg-pull-0 col-md-pull-1 mainmenu-container" id="navigation">
+                <ul class="top-icons-wrap pull-right">
+                    <li class="top-icons search"><a href="#"><i class="icon icon-Search"></i></a></li>
+                </ul>
+                <!--<button class="mainmenu-toggler"><i class="fa fa-bars"></i></button>-->
+                <ul class="mainmenu pull-right">
+                    <li  class='Lev1 <?= $controller == 'site' ? 'current' : '' ?>' > <a href="/" class="menu1 hvr-overline-from-left">网站首页</a></li>
+                    <li class="Lev1 <?= $controller == 'about' ? 'current' : '' ?>"> <a href="/about.html" class="menu1 hvr-overline-from-left">关于我们</a></li>
+                    <li class="Lev1 dropdown "> <a href="/a/product/" class="menu1 hvr-overline-from-left">产品系列 <i class="fa fa-caret-down"></i></a>
+                        <ul class="submenu dr-menu2">
+                            <li class="Lev2"> <a href="/a/product/p1/" class="menu2">产品系列</a> </li>
+                        </ul>
+                    </li><li class="Lev1 "> <a href="/news.html" class="menu1 hvr-overline-from-left">新闻资讯</a></li>
+                    <li class="Lev1 dropdown "> <a href="/a/youshi/" class="menu1 hvr-overline-from-left">产品优势 <i class="fa fa-caret-down"></i></a>
+                        <ul class="submenu dr-menu2">
+                            <li class="Lev2"> <a href="/a/youshi/tuandui/" class="menu2">专业的服务团队</a> </li>
+                            <li class="Lev2"> <a href="/a/youshi/shigong/" class="menu2">专业的施工团队</a> </li>
+                        </ul>
+                    </li><li class="Lev1 dropdown "> <a href="/a/team/" class="menu1 hvr-overline-from-left">精英团队 <i class="fa fa-caret-down"></i></a>
+                        <ul class="submenu dr-menu2">
+                            <li class="Lev2"> <a href="/a/team/sheji/" class="menu2">设计团队</a> </li>
+                            <li class="Lev2"> <a href="/a/team/shigong/" class="menu2">施工团队</a> </li>
+                            <li class="Lev2"> <a href="/a/team/guanli/" class="menu2">管理团队</a> </li>
+                        </ul>
+                    </li><li class="Lev1 "> <a href="/contact.html" class="menu1 hvr-overline-from-left">联系我们 </a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

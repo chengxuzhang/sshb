@@ -101,7 +101,7 @@ return [
                 ['pattern'=>'vr','route'=>'aivr/vr','suffix'=>'.html'],
                 ['pattern'=>'store','route'=>'store','suffix'=>'.html'],
                 ['pattern'=>'business','route'=>'business/index','suffix'=>'.html'],
-                ['pattern'=>'about','route'=>'about/index','suffix'=>'.html'],
+                ['pattern'=>'about','route'=>'about','suffix'=>'.html'],
                 ['pattern'=>'design','route'=>'design/index','suffix'=>'.html'],
                 ['pattern'=>'soft','route'=>'soft/index','suffix'=>'.html'],
                 ['pattern'=>'video-play','route'=>'soft/video-play','suffix'=>'.html'],
