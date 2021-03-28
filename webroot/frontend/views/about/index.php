@@ -53,7 +53,7 @@ $this->title = $title;
                                 <ul class="widget-list">
                                     <li>
                                         <figure><a href="/a/news/74.html">
-                                                <img src="<?= Url::to('@web/images/1-1P2241223450-L.jpg') ?>" />
+                                                <img src="<?= Url::to('@web/images/news.jpg') ?>" />
                                             </a></figure>
                                         <div class="sn-wrapper">
                                             <p class="s-desc"><a href="/a/news/74.html" title="办公室装修设计中您是否忽略了“光健康">办公室装修设计中您是否忽略了“光健康</a></p>

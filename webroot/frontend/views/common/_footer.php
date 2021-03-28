@@ -9,26 +9,17 @@ use yii\helpers\Url;
     <div class="container">
         <div class="row hidden-sm hidden-xs">
             <div class="col-lg-12 col-md-12">
-                <div class="request-for-qoute-wrap"><a href="contact.html" class="request-for-qoute wow slideInDown hvr-bounce-to-right">某某装饰——精益求精</a></div>
+                <div class="request-for-qoute-wrap"><a href="contact.html" class="request-for-qoute wow slideInDown hvr-bounce-to-right">四顺环保——精益求精</a></div>
                 <nav class="footer-menu">
                     <button class="footer-nav-toggler hvr-bounce-to-right">Footer Menu <i class="fa fa-bars"></i></button>
                     <ul>
                         <li><a href="/">网站首页</a></li>
-
-                        <li><a href="/a/about/">关于我们</a></li>
-
-                        <li><a href="/a/product/">产品系列</a></li>
-
-                        <li><a href="/a/case/">定制案例</a></li>
-
-                        <li><a href="/a/news/">新闻资讯</a></li>
-
-                        <li><a href="/a/youshi/">服务优势</a></li>
-
-                        <li><a href="/a/team/">精英团队</a></li>
-
-                        <li><a href="/a/contact/">联系我们</a></li>
-
+                        <li><a href="/about.html">关于我们</a></li>
+                        <li><a href="/product.html">产品系列</a></li>
+                        <li><a href="/news.html">新闻资讯</a></li>
+                        <li><a href="/youshi.html">产品优势</a></li>
+                        <li><a href="/team.html">精英团队</a></li>
+                        <li><a href="/contact.html">联系我们</a></li>
                     </ul>
                 </nav>
             </div>

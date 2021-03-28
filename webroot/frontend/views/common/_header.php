@@ -49,7 +49,7 @@ $controller = Yii::$app->controller->id;
                             <li class="Lev2"> <a href="/a/team/shigong/" class="menu2">施工团队</a> </li>
                             <li class="Lev2"> <a href="/a/team/guanli/" class="menu2">管理团队</a> </li>
                         </ul>
-                    </li><li class="Lev1 "> <a href="/contact.html" class="menu1 hvr-overline-from-left">联系我们 </a></li>
+                    </li><li class="Lev1 <?= $controller == 'contact' ? 'current' : '' ?>"> <a href="/contact.html" class="menu1 hvr-overline-from-left">联系我们 </a></li>
                 </ul>
             </nav>
         </div>
