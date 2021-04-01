@@ -1,7 +1,9 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Document;
 use frontend\models\Hdp;
+use frontend\models\Video;
 use Yii;
 use frontend\models\Experience;
 
@@ -35,8 +37,11 @@ class SiteController extends \frontend\components\BaseController
      */
     public function actionIndex()
     {
+        $video = Video::find()->limit(4)->all();
+        $news = Document::find()->limit(2)->all();
         return $this->render('index',[
-
+            'video' => $video,
+            'news'  => $news,
         ]);
     }
 

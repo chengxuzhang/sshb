@@ -76,7 +76,7 @@ $this->title = CacheConfig::getConfigCache("title");
     </section>
     <section id="our-projects">
         <div class="container">
-            <div class="section-title"> <h1 class="dark-title"><a href="/a/case/">定制案例</a></h1> </div>
+            <div class="section-title"> <h1 class="dark-title"><a href="/a/case/">产品系列</a></h1> </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 masonary-gallery">
                     <div class="masonary-item width-1"> <a class="fancybox" href="javascript:;">
@@ -99,48 +99,20 @@ $this->title = CacheConfig::getConfigCache("title");
     </section>
     <section id="our-specialist">
         <div class="container">
-            <div class="section-title"> <h1><a href="/a/team/">精英团队</a></h1> </div>
+            <div class="section-title"> <h1><a href="/video.html">网站视频</a></h1> </div>
             <div class="row">
+                <?php foreach($video as $val) { ?>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 wow zoomIn hvr-float-shadow team-item" data-wow-duration=".5s" data-wow-delay=".5s">
                     <div class="single-member hvr-bounce-to-bottom">
-                        <a href="/a/team/sheji/64.html" class="team-url">
-                            <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="设计C组主管"/>
+                        <a href="javascript:;" data-link="<?= $val->link ?>" class="team-url">
+                            <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="<?= $val->title ?>"/>
                         </a>
                         <div class="info hvr-bounce-to-top">
-                            <h2><a href="/a/team/sheji/64.html" title="设计C组主管">设计C组主管</a></h2>
+                            <h2><a href="javascript:;" data-link="<?= $val->link ?>" title="<?= $val->title ?>"><?= $val->title ?></a></h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 wow zoomIn hvr-float-shadow team-item" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <div class="single-member hvr-bounce-to-bottom">
-                        <a href="/a/team/sheji/64.html" class="team-url">
-                            <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="设计C组主管"/>
-                        </a>
-                        <div class="info hvr-bounce-to-top">
-                            <h2><a href="/a/team/sheji/64.html" title="设计C组主管">设计C组主管</a></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 wow zoomIn hvr-float-shadow team-item" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <div class="single-member hvr-bounce-to-bottom">
-                        <a href="/a/team/sheji/64.html" class="team-url">
-                            <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="设计C组主管"/>
-                        </a>
-                        <div class="info hvr-bounce-to-top">
-                            <h2><a href="/a/team/sheji/64.html" title="设计C组主管">设计C组主管</a></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 wow zoomIn hvr-float-shadow team-item" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <div class="single-member hvr-bounce-to-bottom">
-                        <a href="/a/team/sheji/64.html" class="team-url">
-                            <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="设计C组主管"/>
-                        </a>
-                        <div class="info hvr-bounce-to-top">
-                            <h2><a href="/a/team/sheji/64.html" title="设计C组主管">设计C组主管</a></h2>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -153,40 +125,31 @@ $this->title = CacheConfig::getConfigCache("title");
                     <p>集室内设计、工程施工、材料装饰为一体的专业化中型装饰企业</p>
                     <p class="phone-contact"><b>
                             <?= CacheConfig::getConfigCache('phone'); ?>
-                        </b> 或 <a href="/a/contact/" class="hvr-bounce-to-right">联系我们</a> </p>
+                        </b> 或 <a href="/contact.html" class="hvr-bounce-to-right">联系我们</a> </p>
                 </div>
             </div>
         </div>
     </section>
     <section id="blog">
         <div class="container">
-            <div class="section-title"> <h1><a href="/a/news/">新闻资讯</a></h1> </div>
-            <div class="row"> <div class="col-lg-6 col-md-6 col-sm-6 blog-wrap hvr-float-shadow">
-                    <div class="col-lg-6 col-md-12 img-wrap"> <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="办公室装修设计中您是否忽略了“光健康"/>
-                        <h2><i class="fa fa-calendar"></i> &nbsp;2018-02-24</h2>
-                    </div>
-                    <div class="col-lg-6 col-md-12 content-wrap">
-                        <h2><a href="/a/news/74.html" title="办公室装修设计中您是否忽略了“光健康">办公室装修设计中您是否忽略了“光健康</a></h2>
-                        <p class="desc">现代办公室装修中很多的业主往往会看重办公室的装修风格和实用性，很少会有业主去关注办公室环境问题，这环境问题不是我们常说的绿色植物的摆放，...</p>
-                        <ul>
-                            <li><span><b>By:</b> admin</span></li>
-                            <li><a href="/a/news/74.html" class="read-more">查看更多</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="section-title"> <h1><a href="/news.html">新闻资讯</a></h1> </div>
+            <div class="row">
+                <?php foreach($news as $val) { ?>
                 <div class="col-lg-6 col-md-6 col-sm-6 blog-wrap hvr-float-shadow">
-                    <div class="col-lg-6 col-md-12 img-wrap"> <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="办公室装修公司为您打造标准合理的过道"/>
-                        <h2><i class="fa fa-calendar"></i> &nbsp;2018-02-24</h2>
+                    <div class="col-lg-6 col-md-12 img-wrap h-300">
+                        <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="<?= $val->title ?>"/>
+                        <h2><i class="fa fa-calendar"></i><?= date('Y-m-d', $val->create_time) ?></h2>
                     </div>
-                    <div class="col-lg-6 col-md-12 content-wrap">
-                        <h2><a href="/a/news/73.html" title="办公室装修公司为您打造标准合理的过道">办公室装修公司为您打造标准合理的过道</a></h2>
-                        <p class="desc">在现代都市生活中，办公室不仅仅是供我们日常办公的重要活动场所，同时也是我们公司企业自身的核心利益所在，彰显出的往往是我们公司企业自身的整...</p>
+                    <div class="col-lg-6 col-md-12 content-wrap h-300">
+                        <h2><a href="/news/<?= $val->id ?>.html" title="<?= $val->title ?>"><?= $val->title ?></a></h2>
+                        <p class="desc"><?= mb_substr($val->description, 0, 60, 'utf-8') ?>...</p>
                         <ul>
-                            <li><span><b>By:</b> admin</span></li>
-                            <li><a href="/a/news/73.html" class="read-more">查看更多</a></li>
+                            <li><span><b>发布者：</b> admin</span></li>
+                            <li><a href="/news/<?= $val->id ?>.html" class="read-more">查看更多</a></li>
                         </ul>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -195,7 +158,7 @@ $this->title = CacheConfig::getConfigCache("title");
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="owl-carousel owl-theme">
-                        <div class="item"><img src="<?= Url::to('@web/images/1-1P2241223450-L.jpg') ?>" alt="三星"/></div>
+                        <div class="item"><img src="<?= Url::to('@web/images/1-1P2241223450-L.jpg') ?>" alt=""/></div>
                     </div>
                 </div>
             </div>
@@ -247,7 +210,6 @@ $this->title = CacheConfig::getConfigCache("title");
     .copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
 </style>
 <div class="copyrights">
-    Collect from <a href="http://www.cssmoban.com/"  title="网站模板">模板之家</a>
-    <a href="https://www.chazidian.com/"  title="查字典">查字典</a>
+    Collect from <a href="http://www.4shb.com/"  title="四顺环保">四顺环保</a>
 </div>
 

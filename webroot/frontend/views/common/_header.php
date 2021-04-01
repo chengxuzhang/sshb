@@ -29,26 +29,15 @@ $controller = Yii::$app->controller->id;
                 <ul class="top-icons-wrap pull-right">
                     <li class="top-icons search"><a href="#"><i class="icon icon-Search"></i></a></li>
                 </ul>
-                <!--<button class="mainmenu-toggler"><i class="fa fa-bars"></i></button>-->
                 <ul class="mainmenu pull-right">
                     <li  class='Lev1 <?= $controller == 'site' ? 'current' : '' ?>' > <a href="/" class="menu1 hvr-overline-from-left">网站首页</a></li>
                     <li class="Lev1 <?= $controller == 'about' ? 'current' : '' ?>"> <a href="/about.html" class="menu1 hvr-overline-from-left">关于我们</a></li>
-                    <li class="Lev1 dropdown "> <a href="/a/product/" class="menu1 hvr-overline-from-left">产品系列 <i class="fa fa-caret-down"></i></a>
+                    <li class="Lev1 dropdown "> <a href="/product.html" class="menu1 hvr-overline-from-left">产品系列 <i class="fa fa-caret-down"></i></a>
                         <ul class="submenu dr-menu2">
-                            <li class="Lev2"> <a href="/a/product/p1/" class="menu2">产品系列</a> </li>
+                            <li class="Lev2"> <a href="/product.html" class="menu2">产品系列</a> </li>
                         </ul>
                     </li><li class="Lev1 "> <a href="/news.html" class="menu1 hvr-overline-from-left">新闻资讯</a></li>
-                    <li class="Lev1 dropdown "> <a href="/a/youshi/" class="menu1 hvr-overline-from-left">产品优势 <i class="fa fa-caret-down"></i></a>
-                        <ul class="submenu dr-menu2">
-                            <li class="Lev2"> <a href="/a/youshi/tuandui/" class="menu2">专业的服务团队</a> </li>
-                            <li class="Lev2"> <a href="/a/youshi/shigong/" class="menu2">专业的施工团队</a> </li>
-                        </ul>
-                    </li><li class="Lev1 dropdown "> <a href="/a/team/" class="menu1 hvr-overline-from-left">精英团队 <i class="fa fa-caret-down"></i></a>
-                        <ul class="submenu dr-menu2">
-                            <li class="Lev2"> <a href="/a/team/sheji/" class="menu2">设计团队</a> </li>
-                            <li class="Lev2"> <a href="/a/team/shigong/" class="menu2">施工团队</a> </li>
-                            <li class="Lev2"> <a href="/a/team/guanli/" class="menu2">管理团队</a> </li>
-                        </ul>
+                    </li><li class="Lev1 "> <a href="/video.html" class="menu1 hvr-overline-from-left">企业视频</a>
                     </li><li class="Lev1 <?= $controller == 'contact' ? 'current' : '' ?>"> <a href="/contact.html" class="menu1 hvr-overline-from-left">联系我们 </a></li>
                 </ul>
             </nav>

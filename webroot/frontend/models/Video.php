@@ -20,7 +20,7 @@ class Video extends \frontend\components\BaseModel
     public function rules()
     {
         return [
-            [['sort', 'type', 'bigtype'], 'integer'],
+            [['sort'], 'integer'],
             [['title', 'link', 'pic', 'keywords'], 'string', 'max' => 255],
         ];
     }
@@ -36,8 +36,6 @@ class Video extends \frontend\components\BaseModel
             'sort' => 'Sort',
             'link' => 'Link',
             'pic' => 'Pic',
-            'type' => 'Type',
-            'bigtype' => 'Bigtype',
             'keywords' => 'keywords'
         ];
     }
