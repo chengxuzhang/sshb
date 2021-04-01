@@ -18,34 +18,21 @@ $this->title = CacheConfig::getConfigCache("title");
         <div class="banner-container">
             <div class="banner home-v1">
                 <ul>
-                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/1-1P2241023190-L.jpg') ?>" data-title="banner1" >
-                        <img src="<?= Url::to('@web/images/1-1P2241023190-L.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut" data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
-                        <div class="caption skewfromright light-plumber-slider-caption tp-resizeme" data-x="center" data-y="200" data-speed="600" data-start="1700" data-easing="easeOutBack">
-                            <h1>选择决定品味</h1>
-                        </div>
-                        <div class="caption randomrotate bold-plumber-slider-caption tp-resizeme" data-x="center" data-y="280" data-speed="500" data-start="2200" data-easing="easeOutBack">
-                            <h1>集室内设计、工程施工、材料装饰为一体的专业化中型装饰企业</h1>
-                        </div>
+                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/2.jpg') ?>"
+                        data-title="banner1" >
+                        <img src="<?= Url::to('@web/images/2.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
+                             data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
                     </li>
-                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/1-1P2241022380-L.jpg') ?>" data-title="banner2" >
-                        <img src="<?= Url::to('@web/images/1-1P2241022380-L.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut" data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
-                        <div class="caption skewfromright light-plumber-slider-caption tp-resizeme" data-x="center" data-y="200" data-speed="600" data-start="1700" data-easing="easeOutBack">
-                            <h1>创造您空间的核心价值</h1>
-                        </div>
-                        <div class="caption randomrotate bold-plumber-slider-caption tp-resizeme" data-x="center" data-y="280" data-speed="500" data-start="2200" data-easing="easeOutBack">
-                            <h1>精益求精，拥有一支工艺精湛、装备精良、作风过硬的施工队伍</h1>
-                        </div>
+                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/1.jpg') ?>"
+                        data-title="banner2" >
+                        <img src="<?= Url::to('@web/images/1.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
+                             data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
                     </li>
-                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/1-1P2241022140-L.jpg') ?>" data-title="banner3" >
-                        <img src="<?= Url::to('@web/images/1-1P2241022140-L.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut" data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
-                        <div class="caption skewfromright light-plumber-slider-caption tp-resizeme" data-x="center" data-y="200" data-speed="600" data-start="1700" data-easing="easeOutBack">
-                            <h1>优质服务，完善售后，精</h1>
-                        </div>
-                        <div class="caption randomrotate bold-plumber-slider-caption tp-resizeme" data-x="center" data-y="280" data-speed="500" data-start="2200" data-easing="easeOutBack">
-                            <h1>胜任不同档次、不同规模、不同类型、不同风格的家居装修等工程。</h1>
-                        </div>
+                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/3.jpg') ?>"
+                        data-title="banner3" >
+                        <img src="<?= Url::to('@web/images/3.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
+                             data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
                     </li>
-
                 </ul>
             </div>
         </div>
