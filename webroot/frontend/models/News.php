@@ -4,7 +4,7 @@ namespace frontend\models;
 
 use Yii;
 
-class Document extends \frontend\components\BaseModel
+class News extends \frontend\components\BaseModel
 {
     /**
      * @inheritdoc
@@ -74,7 +74,7 @@ class Document extends \frontend\components\BaseModel
     }
 
     public function getArticle(){
-        return $this->hasOne(DocumentArticle::className(), ['id'=>'id']);
+        return $this->hasOne(NewsArticle::className(), ['id'=>'id']);
     }
 
     public function extraFields()

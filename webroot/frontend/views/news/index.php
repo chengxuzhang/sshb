@@ -2,189 +2,169 @@
 
 use frontend\components\Html;
 use yii\helpers\Url;
-use frontend\components\CacheConfig;
+use frontend\components\NextUrlPager;
 
-$this->title = $title;
+$this->title = '四顺环保';
 ?>
 
-<?= Html::jsFile("@web/js/news.js") ?>
-<?= Html::cssFile("@web/css/news.css") ?>
-<?= Html::cssFile("@web/css/basic.css") ?>
-<?= Html::cssFile("@web/css/news_cn.css") ?>
+<?php echo $this->render('/common/_check'); ?>
+<div class="preloader"></div>
+<div id="page-body-wrap">
+    <?php echo $this->render('/common/_topbar'); ?>
+    <?php echo $this->render('/common/_header'); ?>
 
-<div class="zj_line"></div>
-<!--back to top-->
-<?php echo $this->render('/common/_right'); ?>
-<!--wrap-->
-<div class="container-fluid m_common">
-    <!--nav-->
-    <div class="row vr_nav zj_black_bg">
-        <div class="vr_nav_con hidden-xs">
-            <div class="col-lg-3 col-xs-3 zj_logo hidden-xs"><h1><a href="/"><img
-                                src="<?= Url::to('@web/images/logo_bai.png'); ?>"/></a></h1></div>
-            <div class="col-lg-3 col-xs-3 zj_logo_m visible-xs"><h1><img
-                            src="<?= Url::to('@web/images/logo_bai.png'); ?>"/></h1></div>
-            <ul class="col-lg-9 col-xs-9 zj_menu hidden-xs">
-                <!-- 头部开始 -->
-                <?php echo $this->render('/common/_header'); ?>
-                <!-- 头部结束 -->
-            </ul>
-        </div>
-        <div class="visible-xs">
-            <nav class="navbar navbar-default m_loser" role="navigation" style="margin: 0;">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target="#example-navbar-collapse">
-                            <img src="<?= Url::to('@web/m-images/icon_daohang.png'); ?>" class="m_dh"
-                                 style="position: absolute;"/>
-                            <img src="<?= Url::to('@web/m-images/close.png'); ?>" class="m_dh1"
-                                 style="position: absolute;"/>
-                        </button>
-                        <a class="navbar-brand" href="javascript:;" style="padding-left: 30px;"><img
-                                    src="<?= Url::to('@web/m-images/logo_black_xiao.png'); ?>" class="img-responsive"
-                                    style="width: 40%;"/></a>
+    <section id="page-title" style="background-image:url(/skin/images/news.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h1>新闻资讯</h1>
                     </div>
-                    <div class="collapse navbar-collapse" id="example-navbar-collapse">
-                        <ul class="nav navbar-nav m_menu">
-                            <!-- 手机端头部开始 -->
-                            <?php echo $this->render('/common/_mobile_header'); ?>
-                            <!-- 手机端头部结束 -->
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <div class="row" style="margin-top: 60px;">
-        <div class="news-top-bg auto-height" data-scale="1920|388"></div>
-    </div>
-
-    <div class="row">
-        <div class="subcolumn_nav_met_21_1_10" m-id="10" m-type="nocontent">
-            <div class="container">
-                <div class="row">
-                    <div class="clearfix">
-                        <div class="subcolumn-nav text-xs-left">
-                            <ul class="subcolumn_nav_met_21_1_10-ul m-b-0 p-y-10 p-x-0 ulstyle">
-                                <li>
-                                    <a href="/news.html" title="全部" class="<?= Yii::$app->request->get('type') ? "" : "active" ?> link">全部</a>
-                                </li>
-                                <?php foreach ($categoryList as $cate) { ?>
-                                    <li>
-                                        <a href="/news/<?= $cate->id ?>/1.html" title="<?= $cate->title ?>" class="<?= Yii::$app->request->get('type') == $cate->id ? "active" : ""; ?> link"><?= $cate->title ?></a>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                        <ul class="subcolumn-nav-location clearfix ulstyle">
-                            <li class="location">
-                                您的位置：						</li>
-                            <li>
-                                <a href="../" title="网站首页">
-                                    网站首页							</a>
-                                <i class="glyphicon glyphicon-menu-right"></i>
-                            </li>
-                            <li>
-                                <a href="/news.html" target="_self" title="新闻资讯">新闻资讯</a>
-                                <i class="glyphicon glyphicon-menu-right"></i>
-                            </li>
-                        </ul>
+                    <div class="page-breadcumb"><i class="fa fa-map-marker"></i> &nbsp;<span>当前位置： <a
+                                    href='http://demo559.admin868.com/'>主页</a> > <a href='/a/news/'>新闻资讯</a> > </span>
                     </div>
                 </div>
             </div>
         </div>
-        <main class="news_list_page_met_21_6_11 met-news">
-            <div class="container">
-                <div class="row">
-                    <div class="met-news-list">
-                        <ul class="blocks-100 blocks-md-1 blocks-lg-1 blocks-xxl-1 ulstyle met-pager-ajax imagesize" data-scale="400x600" m-id="11">
-                            <!-- 图文模式 -->
-                            <?php foreach ($model as $item){ ?>
-                            <li class="media media-lg border-bottom1">
-                                <div class="media-left">
-                                    <a href="/news/detail/<?= $item->id?>.html" title="<?= $item->title ?>" target="_self">
-                                        <img class="media-object" src="<?= CacheConfig::getConfigCache("endpoint").CacheConfig::getConfigCache("dirname").$item->cover_url; ?>" alt="<?= $item->title ?>" style="">
-                                    </a>
+    </section>
+    <div class="page-container" id="innerpage-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="main col-md-9 inner-left" role="main">
+                    <article class="blog-wrap">
+                        <div class="blog-article hentry format-image">
+                            <figure>
+                                <a class="swipebox-x" href="/a/news/74.html"> <img class="img-responsive"
+                                                                                   alt="办公室装修设计中您是否忽略了“光健康”"
+                                                                                   src="/uploads/180224/1-1P224130532246.jpg"/>
+                                </a></figure>
+                            <div class="entry-summary post-summary">
+                                <header class="entry-header">
+                                    <h2 class="entry-title post-title"><a href="/a/news/74.html"
+                                                                          title="办公室装修设计中您是否忽略了“光健康”">办公室装修设计中您是否忽略了“光健康”</a>
+                                    </h2>
+                                </header>
+                                <div class="entry-meta post-meta">
+                                    <ul>
+                                        <li class="entry-date date">
+                                            <time class="entry-date" datetime="2018-02-24">2018-02-24</time>
+                                        </li>
+                                        <li class="tags"><a href="/a/news/">新闻资讯</a></li>
+                                        <li class="byline author vcard">by <a href="javascript:void(0)"
+                                                                              class="fn">admin</a></li>
+                                    </ul>
                                 </div>
-                                <div class="media-body">
-                                    <h4>
-                                        <a href="/news/detail/<?= $item->id?>.html" title="<?= $item->title ?>" target="_self">
-                                            <span style=""><?= $item->title ?></span>
-                                        </a>
-                                    </h4>
-                                    <p class="des font-weight-300">
-                                        <?= $item->description ?>
-                                    </p>
-                                    <p class="info font-weight-300">
-                                        <span><?= date("Y-m-d", $item->create_time) ?></span>
-                                        <span></span>
-                                        <span><i class="icon wb-eye m-r-5 font-weight-300" aria-hidden="true"></i><?= $item->view ?></span>
-                                    </p>
+                                <div class="entry-content">
+                                    <p>
+                                        现代办公室装修中很多的业主往往会看重办公室的装修风格和实用性，很少会有业主去关注办公室环境问题，这环境问题不是我们常说的绿色植物的摆放，或是装修材料的选择是否环保...</p>
                                 </div>
-                            </li>
-                        <?php } ?>
+                                <a href="/a/news/74.html" class="read-more-link">查看详细</a></div>
+                        </div>
+                    </article>
+                    <div class="pagess">
+                        <ul>
+                            <li>首页</li>
+                            <li class="thisclass">1</li>
+                            <li><a href='list_16_2.html'>2</a></li>
+                            <li><a href='list_16_2.html'>下一页</a></li>
+                            <li><a href='list_16_2.html'>末页</a></li>
+
                         </ul>
-                        <div class="m-t-20 text-xs-center hidden-xs" m-type="nosysdata">
-                            <div class="met_pager">
-                                <?php
-                                    if($prevUrl == null){
-                                        echo '<span class="PreSpan">上一页</span>';
-                                    }else{
-                                        echo '<a href="'.$prevUrl.'" class="PreA">上一页</a>';
-                                    }
-                                ?>
-                                <?php foreach ($pageList as $pl) { ?>
-                                    <a href="<?= $pl['url'] ?>" class="<?= $pl['current'] ?>"><?= $pl['index'] ?></a>
-                                <?php } ?>
-                                <?php
-                                    if($nextUrl == null){
-                                        echo '<span class="NextSpan">下一页</span>';
-                                    }else{
-                                        echo '<a href="'.$nextUrl.'" class="NextA">下一页</a>';
-                                    }
-                                ?>
+                    </div>
+                </div>
+                <aside class="sidebar col-md-3 inner-right" role="complementary">
+                    <section class="widget side-search">
+                        <h3 class="title">站内搜索</h3>
+                        <form class="searchform" name="formsearch" action="/plus/search.php">
+                            <input type="hidden" name="kwtype" value="0"/>
+                            <div class="sform-div">
+                                <label class="screen-reader-text" for="s"></label>
+                                <input type="text" value="" name="q" placeholder="输入关键字" id="s"/>
+                                <input type="submit" id="searchsubmit" value=""/>
+                            </div>
+                        </form>
+                    </section>
+                    <section class="widget side-news">
+                        <h3 class="title">热点新闻</h3>
+                        <div class="tabbed custom-tabbed">
+                            <div class="block current">
+                                <ul class="widget-list">
+                                    <li>
+                                        <figure><a href="/a/news/74.html"><img
+                                                        src="/uploads/180224/1-1P224130532246.jpg"/></a></figure>
+                                        <div class="sn-wrapper">
+                                            <p class="s-desc"><a href="/a/news/74.html" title="办公室装修设计中您是否忽略了“光健康">办公室装修设计中您是否忽略了“光健康</a>
+                                            </p>
+                                            <span class="comments"><i
+                                                        class="fa fa-calendar"></i> &nbsp;2018-02-24</span></div>
+                                    </li>
+                                    <li>
+                                        <figure><a href="/a/news/73.html"><img
+                                                        src="/uploads/allimg/180224/1-1P2241239480-L.jpg"/></a></figure>
+                                        <div class="sn-wrapper">
+                                            <p class="s-desc"><a href="/a/news/73.html" title="办公室装修公司为您打造标准合理的过道">办公室装修公司为您打造标准合理的过道</a>
+                                            </p>
+                                            <span class="comments"><i
+                                                        class="fa fa-calendar"></i> &nbsp;2018-02-24</span></div>
+                                    </li>
+                                    <li>
+                                        <figure><a href="/a/news/72.html"><img
+                                                        src="/uploads/allimg/180224/1-1P2241239280-L.jpg"/></a></figure>
+                                        <div class="sn-wrapper">
+                                            <p class="s-desc"><a href="/a/news/72.html" title="办公室设计室内环境私密性问题分析">办公室设计室内环境私密性问题分析</a>
+                                            </p>
+                                            <span class="comments"><i
+                                                        class="fa fa-calendar"></i> &nbsp;2018-02-24</span></div>
+                                    </li>
+
+                                </ul>
                             </div>
                         </div>
-                        <div class="met_pager met-pager-ajax-link visible-xs animation-slide-bottom appear-no-repeat"
-                             data-plugin="appear" data-animate="slide-bottom" data-repeat="false" m-type="nosysdata"
-                             style="">
-                            <button type="button" class="btn btn-primary btn-block btn-squared ladda-button"
-                                    id="met-pager-btn" data-plugin="ladda" data-style="slide-left" data-url=""
-                                    data-page="1"><span class="ladda-label">
-                                        <i class="glyphicon glyphicon-menu-down m-r-5" aria-hidden="true"></i>
-                                    </span><span class="ladda-spinner"></span></button>
-                        </div>
-                    </div>
-                </div>
+                    </section>
+                </aside>
             </div>
-        </main>
+        </div>
     </div>
-
-    <!-- 尾部开始 -->
+    <div class="for-bottom-padding"></div>
     <?php echo $this->render('/common/_footer'); ?>
-    <!-- 尾部结束 -->
 </div>
-
-<script>
-    $(function () {
-        var url = null;
-        if($(".NextA")){
-            url = $(".NextA").attr("href");
-        }
-        $("#met-pager-btn").click(function () {
-            if(url != null){
-                $.get(url, function (req,status) {
-                    $("ul.met-pager-ajax").append($(req).find("ul.met-pager-ajax").html());
-                    if($(req).find("a.NextA")){
-                        url = $(req).find("a.NextA").attr("href");
-                    }else{
-                        $(".met-pager-ajax-link").hide();
-                        url = null;
-                    }
-                })
+<?= Html::jsFile('@web/js/sshb/wow.js') ?>
+<?= Html::jsFile('@web/js/sshb/owl.carousel.min.js') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.themepunch.tools.min.js') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.themepunch.revolution.min.js') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.fancybox.pack.js') ?>
+<?= Html::jsFile('@web/js/sshb/custom.js') ?>
+<?php echo $this->render('/common/_nav'); ?>
+<?= Html::cssFile('@web/css/sshb/jquery.mmenu.all.css') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.mmenu.all.min.js') ?>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        var mmenu = $('nav#mmenu').mmenu({
+            slidingSubmenus: true,
+            classes: 'mm-white', //mm-fullscreen mm-light
+            extensions: ["theme-white"],
+            offCanvas: {
+                position: "right", //left, top, right, bottom
+                zposition: "front" //back, front,next
+                //modal		: true
+            },
+            searchfield: false,
+            counters: false,
+            //navbars		: {
+            //content : [ "prev", "title", "next" ]
+            //},
+            navbar: {
+                title: "网站导航"
+            },
+            header: {
+                add: true,
+                update: true,
+                title: "网站导航"
             }
-        })
-    })
+        });
+        $(".closemenu").click(function () {
+            var mmenuAPI = $("#mmenu").data("mmenu");
+            mmenuAPI.close();
+        });
+    });
 </script>

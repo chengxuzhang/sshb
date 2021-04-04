@@ -75,22 +75,41 @@ return [
             // 指定续接在URL后面的一个后缀，如 .html 之类的。仅在 enablePrettyUrl 启用时有效。    
             "suffix" => "",
             "rules" => [
-                ['pattern'=>'news','route'=>'news/index','suffix'=>'.html'],
+                ['pattern'=>'news','route'=>'news','suffix'=>'.html'],
                 [
                     'pattern'=>'news/<page:\d+>',
-                    'route'=>'news/index',
+                    'route'=>'news',
                     'defaults' => ['page'=>1],
                     'suffix'=>'.html'
                 ],
                 [
                     'pattern'=>'news/<type:\d+>/<page:\d+>',
-                    'route'=>'news/index',
+                    'route'=>'news',
                     'defaults' => ['page'=>1,'type'=>1],
                     'suffix'=>'.html'
                 ],
                 [
                     'pattern'=>'news/detail/<id:\d+>',
                     'route'=>'news/view',
+                    'suffix'=>'.html'
+                ],
+                // 产品路由
+                ['pattern'=>'product','route'=>'product','suffix'=>'.html'],
+                [
+                    'pattern'=>'product/<page:\d+>',
+                    'route'=>'product/index',
+                    'defaults' => ['page'=>1],
+                    'suffix'=>'.html'
+                ],
+                [
+                    'pattern'=>'product/<type:\d+>/<page:\d+>',
+                    'route'=>'product/index',
+                    'defaults' => ['page'=>1,'type'=>1],
+                    'suffix'=>'.html'
+                ],
+                [
+                    'pattern'=>'product/detail/<id:\d+>',
+                    'route'=>'product/view',
                     'suffix'=>'.html'
                 ],
                 ['pattern'=>'contact','route'=>'contact','suffix'=>'.html'],

@@ -4,15 +4,6 @@ namespace frontend\models;
 
 use Yii;
 
-/**
- * This is the model class for table "product".
- *
- * @property string $id
- * @property string $position
- * @property string $name
- * @property integer $createTime
- * @property integer $template_id
- */
 class Product extends \frontend\components\BaseModel
 {
     /**
@@ -29,8 +20,13 @@ class Product extends \frontend\components\BaseModel
     public function rules()
     {
         return [
-            [['createTime', 'template_id'], 'integer'],
-            [['position', 'name'], 'string', 'max' => 255],
+            [['uid', 'category_id', 'root', 'pid', 'model_id', 'type', 'link_id', 'cover_id', 'display', 'deadline', 'attach', 'view', 'comment', 'extend', 'level', 'create_time', 'update_time', 'status'], 'integer'],
+            [['category_id','title','status'], 'required'],
+            [['name'], 'string', 'max' => 40],
+            [['title'], 'string', 'max' => 80],
+            [['cover_url'], 'string', 'max' => 255],
+            [['description'], 'string', 'max' => 140],
+            [['tag','position'],'safe'],
         ];
     }
 
@@ -40,26 +36,40 @@ class Product extends \frontend\components\BaseModel
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'position' => 'Position',
-            'name' => 'Name',
-            'createTime' => 'Create Time',
-            'template_id' => 'Template ID',
+            'id' => '文档ID',
+            'uid' => '创建人',
+            'name' => '标识',
+            'title' => '标题',
+            'category_id' => '所属分类',
+            'description' => '描述',
+            'root' => '根节点',
+            'pid' => '所属ID',
+            'model_id' => '内容模型ID',
+            'type' => '内容类型',
+            'position' => '推荐位',
+            'link_id' => '外链',
+            'cover_id' => '封面',
+            'display' => '可见性',
+            'deadline' => '截至时间',
+            'attach' => '附件数量',
+            'view' => '浏览量',
+            'comment' => '评论数',
+            'extend' => '扩展统计字段',
+            'level' => '优先级',
+            'create_time' => '创建时间',
+            'update_time' => '更新时间',
+            'status' => '数据状态',
+            'cover_url'=>'封面链接地址',
+            'tag' => '标签',
         ];
     }
 
-    // 获取产品模版
-    public function getProductAttribute()
-    {
-        return $this->hasMany(ProductAttribute::className(), ['template_id' => 'template_id', 'product_id' => 'id']);
+    public function getArticle(){
+        return $this->hasOne(ProductArticle::className(), ['id'=>'id']);
     }
 
-    /**
-     * 扩展字段
-     * @return array
-     */
     public function extraFields()
     {
-        return ['productAttribute'];
+        return ['article'];
     }
 }

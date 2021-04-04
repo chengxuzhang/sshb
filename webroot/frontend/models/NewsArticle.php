@@ -4,7 +4,7 @@ namespace frontend\models;
 
 use Yii;
 
-class DocumentArticle extends \frontend\components\BaseModel
+class NewsArticle extends \frontend\components\BaseModel
 {
     /**
      * @inheritdoc
