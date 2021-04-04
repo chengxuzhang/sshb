@@ -158,52 +158,8 @@ class ConfigController extends BaseController
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
-
-    //>>> [ Arthur Xie ] add start
-    /**
-     * 小程序版本审核页面
-     */
-    public function actionCensorship() {
-        $model = new MpVersion();
-        return $this->render('censorship');
-    }
-
-    public function actionGetVersions() {
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        $model = new MpVersion();
-        $versions = $model
-            ->find()
-            ->orderBy(['create_time' => SORT_DESC])
-            ->all();
-
-        return $model->success($versions);
-    }
-
-    public function actionReleaseVersion($id) {
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        $model = MpVersion::findOne(['id' => $id]);
-        
-        $model->status = 1;
-        $model->release_time = date('Y-m-d H:i:s');
-        $model->save();
-
-        return $model->success(['release_time' => $model->release_time]);
-    }
-
-    public function actionUnreleaseVersion($id) {
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        $model = MpVersion::findOne(['id' => $id]);
-        
-        $model->status = 0;
-        $model->release_time = null;
-        $model->save();
-
-        return $model->success();
-    }
-    //<<< [ Arthur Xie ] add end
 
     /**
      * Finds the Config model based on its primary key value.
