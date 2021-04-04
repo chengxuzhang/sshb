@@ -2,7 +2,11 @@
 use frontend\components\ActiveSmarty;
 use frontend\components\CacheConfig;
 use frontend\components\Html;
+use frontend\models\News;
 use yii\helpers\Url;
+
+
+$news = News::find()->limit(4)->orderBy('create_time desc')->all();
 ?>
 
 <footer id="footer-sec" class="footer">

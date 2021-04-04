@@ -155,7 +155,7 @@ $this->title = CacheConfig::getConfigCache("title");
             </div>
         </div>
     </section>
-    <?php echo $this->render('/common/_footer', ['news'=>$footerNews]); ?>
+    <?php echo $this->render('/common/_footer'); ?>
 </div>
 <?= Html::jsFile('@web/js/sshb/wow.js') ?>
 <?= Html::jsFile('@web/js/sshb/owl.carousel.min.js') ?>
