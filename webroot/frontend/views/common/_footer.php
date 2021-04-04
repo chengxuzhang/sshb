@@ -17,8 +17,7 @@ use yii\helpers\Url;
                         <li><a href="/about.html">关于我们</a></li>
                         <li><a href="/product.html">产品系列</a></li>
                         <li><a href="/news.html">新闻资讯</a></li>
-                        <li><a href="/youshi.html">产品优势</a></li>
-                        <li><a href="/team.html">精英团队</a></li>
+                        <li><a href="/video.html">企业视频</a></li>
                         <li><a href="/contact.html">联系我们</a></li>
                     </ul>
                 </nav>
@@ -26,13 +25,13 @@ use yii\helpers\Url;
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs widget foot-about">
-                <h3 class="dark-title"><a href="/a/about/jianjie/">公司简介</a> </h3>
+                <h3 class="dark-title"><a href="/about.html">公司简介</a> </h3>
                 <div class="f-about">
                     <p>
                         <?= CacheConfig::getConfigCache('remark'); ?>
                     </p>
                 </div>
-                <a href="/a/about/jianjie/" class="read-more">查看更多 <i class="fa fa-angle-double-right"></i></a>
+                <a href="/about.html" class="read-more">查看更多 <i class="fa fa-angle-double-right"></i></a>
                 <ul class="social">
                     <li><a href="http://www.weibo.com/gooxao" class="hvr-radial-out" target="_blank"><i class="fa fa-weibo"></i></a></li>
                     <li><a href="http://t.qq.com/gooxao2" class="hvr-radial-out" target="_blank"><i class="fa fa-tencent-weibo"></i></a></li>
@@ -41,29 +40,15 @@ use yii\helpers\Url;
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget hidden-sm hidden-xs">
-                <h3 class="dark-title"><a href="/a/news/">新闻资讯</a> </h3>
+                <h3 class="dark-title"><a href="/news.html">新闻资讯</a> </h3>
                 <ul class="popular-post">
-                    <li> <a href="/a/news/74.html">
-                            <h5 title="办公室装修设计中您是否忽略了“光健康"><i class="fa fa-angle-right"></i> &nbsp;办公室装修设计中您是否忽略了“光健康</h5>
+                    <?php foreach($news as $key => $val) { ?>
+                    <li> <a href="/news/detail/<?= $val->id ?>.html">
+                            <h5 title="<?= $val->title ?>"><i class="fa fa-angle-right"></i> &nbsp;&nbsp; <?= $val->title ?></h5>
                         </a>
-                        <p class="date"><i class="fa fa-calendar"></i> &nbsp;2018-02-24</p>
+                        <p class="date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;<?= date('Y-m-d', $val->create_time) ?></p>
                     </li>
-                    <li> <a href="/a/news/73.html">
-                            <h5 title="办公室装修公司为您打造标准合理的过道"><i class="fa fa-angle-right"></i> &nbsp;办公室装修公司为您打造标准合理的过道</h5>
-                        </a>
-                        <p class="date"><i class="fa fa-calendar"></i> &nbsp;2018-02-24</p>
-                    </li>
-                    <li> <a href="/a/news/72.html">
-                            <h5 title="办公室设计室内环境私密性问题分析"><i class="fa fa-angle-right"></i> &nbsp;办公室设计室内环境私密性问题分析</h5>
-                        </a>
-                        <p class="date"><i class="fa fa-calendar"></i> &nbsp;2018-02-24</p>
-                    </li>
-                    <li> <a href="/a/news/71.html">
-                            <h5 title="办公室装饰工程中石材的选用技巧"><i class="fa fa-angle-right"></i> &nbsp;办公室装饰工程中石材的选用技巧</h5>
-                        </a>
-                        <p class="date"><i class="fa fa-calendar"></i> &nbsp;2018-02-24</p>
-                    </li>
-
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget foot-contact hidden-sm hidden-xs">

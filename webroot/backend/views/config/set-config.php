@@ -104,15 +104,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <div class="layui-upload">
                                             <button type="button" class="layui-btn configUpload">上传图片</button>
                                             <div class="layui-upload-list">
-                                                <img class="layui-upload-img" src="<?=
-                                                implode("", [
-                                                    CacheConfig::getConfigCache("oss_http"),
-                                                    CacheConfig::getConfigCache("endpoint"),
-                                                    CacheConfig::getConfigCache("oss_dirname"),
-                                                    $conf->value,
-                                                    ""
-                                                ]);
-                                                ?>">
+                                                <img class="layui-upload-img" src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $conf->value ?>">
                                                 <p class="demoText"></p>
                                                 <input type="hidden" name="<?= $conf->fieldName; ?>" lay-verify="<?= $conf->fieldName; ?>" value="<?= $conf->value; ?>">
                                             </div>

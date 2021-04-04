@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use frontend\models\Document;
 use frontend\models\Hdp;
+use frontend\models\News;
 use frontend\models\Video;
 use Yii;
 use frontend\models\Experience;
@@ -38,10 +39,12 @@ class SiteController extends \frontend\components\BaseController
     public function actionIndex()
     {
         $video = Video::find()->limit(4)->all();
-        $news = Document::find()->limit(2)->all();
+        $news = News::find()->limit(2)->all();
+        $footerNews = News::find()->limit(4)->orderBy('create_time desc')->all();
         return $this->render('index',[
             'video' => $video,
             'news'  => $news,
+            'footerNews' => $footerNews
         ]);
     }
 

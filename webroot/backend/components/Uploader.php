@@ -104,7 +104,7 @@ class Uploader
             return;
         }
 
-        //创建目录失败
+//        //创建目录失败
 //        if (!file_exists($dirname) && !mkdir($dirname, 0777, true)) {
 //            $this->stateInfo = $this->getStateInfo("ERROR_CREATE_DIR");
 //            return;
@@ -124,11 +124,11 @@ class Uploader
         $accessKeyId = CacheConfig::getConfigCache("accessKeyId");
         $accessKeySecret = CacheConfig::getConfigCache("accessKeySecret");
         // Endpoint以杭州为例，其它Region请按实际情况填写。
-        $endpoint = CacheConfig::getConfigCache("oss_http") . str_replace(array("https://","http://"),"", CacheConfig::getConfigCache("default_endpoint"));
+        $endpoint = str_replace(CacheConfig::getConfigCache("bucket") . ".","", CacheConfig::getConfigCache("endpointOld"));
         // 存储空间名称
         $bucket= CacheConfig::getConfigCache("bucket");
         // 文件名称
-        $object = CacheConfig::getConfigCache("oss_dirname") . $this->fullName;
+        $object = CacheConfig::getConfigCache("dirname") . $this->fullName;
         // <yourLocalFile>由本地文件路径加文件名包括后缀组成，例如/users/local/myfile.txt
         $filePath = $file['tmp_name'];
 

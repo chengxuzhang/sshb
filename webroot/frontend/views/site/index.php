@@ -18,19 +18,19 @@ $this->title = CacheConfig::getConfigCache("title");
         <div class="banner-container">
             <div class="banner home-v1">
                 <ul>
-                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/2.jpg') ?>"
+                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("hdp1") ?>"
                         data-title="banner1" >
-                        <img src="<?= Url::to('@web/images/2.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
+                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("hdp1") ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
                              data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
                     </li>
-                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/1.jpg') ?>"
+                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("hdp2") ?>"
                         data-title="banner2" >
-                        <img src="<?= Url::to('@web/images/1.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
+                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("hdp2") ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
                              data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
                     </li>
-                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= Url::to('@web/images/3.jpg') ?>"
+                    <li class="slider-2 slide-item" data-transition="random" data-slotamount="7" data-thumb="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("hdp3") ?>"
                         data-title="banner3" >
-                        <img src="<?= Url::to('@web/images/3.jpg') ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
+                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("hdp3") ?>" data-bgposition="center top" data-kenburns="off" data-duration="2000" data-ease="Power4.easeInOut"
                              data-bgfit="200" data-bgfitend="100" data-bgpositionend="center top" alt="banner1"/>
                     </li>
                 </ul>
@@ -40,24 +40,28 @@ $this->title = CacheConfig::getConfigCache("title");
     <section id="who-we-are">
         <div class="container">
             <div class="row"> <div class="col-lg-6 col-md-12 large-box col-sm-12 col-xs-12 wow zoomIn hvr-float-shadow whyitem-1" data-wow-duration=".5s">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 img-holder"> <img src="<?= Url::to('@web/images/s1.jpg') ?>" alt=""/> </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 img-holder">
+                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_1") ?>" alt=""/>
+                    </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 hvr-bounce-to-left adv-text-one">
-                        <h2>服务优势</h2>
-                        <p>01、专业的设计团队：我们公司有专业的设计团队，根据业主的需要第一时间为您做好您所需要的装修设计方案。公司专业承接商业家居装修设计施工、商业空间装修设计施工、写字楼装修设计施工、厂房装修设计施工等。</p>
+                        <h2><?= CacheConfig::getConfigCache("product_title_1") ?></h2>
+                        <p>01、<?= CacheConfig::getConfigCache("product_remark_1") ?></p>
                     </div>
                 </div>
-
-
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn whyitem-2" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <div class="img-holder"> <img src="<?= Url::to('@web/images/s2.jpg') ?>" alt=""/> </div>
-                    <h2>2、专业的服务团队</h2>
-                    <p>我们公司有专业的服务团队，第一时间为您准确传达公司的装饰设计及报价内容。独特的设计风格，专业的装修保障。</p>
+                    <div class="img-holder">
+                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_2") ?>" alt=""/>
+                    </div>
+                    <h2>02、<?= CacheConfig::getConfigCache("product_title_2") ?></h2>
+                    <p><?= CacheConfig::getConfigCache("product_remark_2") ?></p>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn whyitem-3" data-wow-duration=".5s" data-wow-delay="1s">
-                    <div class="img-holder"> <img src="<?= Url::to('@web/images/s2.jpg') ?>" alt=""/> </div>
-                    <h2>3、专业的施工团队</h2>
-                    <p>我们公司有专业的施工团队，帮助您解决工地上各种施工难点。过硬的施工质量，满足不同的层次和不同的业主需求。</p>
+                    <div class="img-holder">
+                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_3") ?>" alt=""/>
+                    </div>
+                    <h2>03、<?= CacheConfig::getConfigCache("product_title_3") ?></h2>
+                    <p><?= CacheConfig::getConfigCache("product_remark_3") ?></p>
                 </div> </div>
         </div>
     </section>
@@ -151,7 +155,7 @@ $this->title = CacheConfig::getConfigCache("title");
             </div>
         </div>
     </section>
-    <?php echo $this->render('/common/_footer'); ?>
+    <?php echo $this->render('/common/_footer', ['news'=>$footerNews]); ?>
 </div>
 <?= Html::jsFile('@web/js/sshb/wow.js') ?>
 <?= Html::jsFile('@web/js/sshb/owl.carousel.min.js') ?>
