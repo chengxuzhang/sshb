@@ -97,6 +97,7 @@ class NewsController extends Controller
 
         $categoryList = Category::find()->all();
 //        print_r($categoryList);die;
+//        print_r($pageList);die;
 
         return $this->render('index', [
             'title' => $title,

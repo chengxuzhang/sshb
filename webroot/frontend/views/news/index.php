@@ -1,5 +1,6 @@
 <?php
 
+use frontend\components\CacheConfig;
 use frontend\components\Html;
 use yii\helpers\Url;
 use frontend\components\NextUrlPager;
@@ -13,7 +14,7 @@ $this->title = '四顺环保';
     <?php echo $this->render('/common/_topbar'); ?>
     <?php echo $this->render('/common/_header'); ?>
 
-    <section id="page-title" style="background-image:url(/skin/images/news.jpg);">
+    <section id="page-title" style="background-image:url(/images/news_title.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -32,43 +33,48 @@ $this->title = '四顺环保';
             <div class="row">
                 <div class="main col-md-9 inner-left" role="main">
                     <article class="blog-wrap">
+                        <?php foreach($model as $val) { ?>
                         <div class="blog-article hentry format-image">
                             <figure>
-                                <a class="swipebox-x" href="/a/news/74.html"> <img class="img-responsive"
-                                                                                   alt="办公室装修设计中您是否忽略了“光健康”"
-                                                                                   src="/uploads/180224/1-1P224130532246.jpg"/>
-                                </a></figure>
+                                <a class="swipebox-x" href="/news/detail/<?= $val->id ?>.html">
+                                    <img class="img-responsive" alt="<?= $val->title ?>"
+                                         src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>"/>
+                                </a>
+                            </figure>
                             <div class="entry-summary post-summary">
                                 <header class="entry-header">
-                                    <h2 class="entry-title post-title"><a href="/a/news/74.html"
-                                                                          title="办公室装修设计中您是否忽略了“光健康”">办公室装修设计中您是否忽略了“光健康”</a>
+                                    <h2 class="entry-title post-title">
+                                        <a href="/news/detail/<?= $val->id ?>.html" title="<?= $val->title ?>"><?= $val->title ?></a>
                                     </h2>
                                 </header>
                                 <div class="entry-meta post-meta">
                                     <ul>
                                         <li class="entry-date date">
-                                            <time class="entry-date" datetime="2018-02-24">2018-02-24</time>
+                                            <time class="entry-date" datetime="2018-02-24"><?= date('Y-m-d', $val->create_time) ?></time>
                                         </li>
-                                        <li class="tags"><a href="/a/news/">新闻资讯</a></li>
-                                        <li class="byline author vcard">by <a href="javascript:void(0)"
-                                                                              class="fn">admin</a></li>
+                                        <li class="tags"><a href="/news.html">新闻资讯</a></li>
+                                        <li class="byline author vcard">by
+                                            <a href="javascript:void(0)" class="fn"> admin </a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="entry-content">
-                                    <p>
-                                        现代办公室装修中很多的业主往往会看重办公室的装修风格和实用性，很少会有业主去关注办公室环境问题，这环境问题不是我们常说的绿色植物的摆放，或是装修材料的选择是否环保...</p>
+                                    <p><?= $val->description ?></p>
                                 </div>
-                                <a href="/a/news/74.html" class="read-more-link">查看详细</a></div>
+                                <a href="/news/detail/<?= $val->id ?>.html" class="read-more-link">查看详细</a>
+                            </div>
                         </div>
+                        <?php } ?>
                     </article>
                     <div class="pagess">
                         <ul>
-                            <li>首页</li>
-                            <li class="thisclass">1</li>
-                            <li><a href='list_16_2.html'>2</a></li>
-                            <li><a href='list_16_2.html'>下一页</a></li>
-                            <li><a href='list_16_2.html'>末页</a></li>
-
+                            <li><a href="<?= $prevUrl ?>">上一页</a></li>
+                            <?php foreach($pageList as $val) { ?>
+                            <li class="<?= $val['current'] == 'Ahover' ? 'thisclass' : '' ?>">
+                                <?= $val['current'] == 'Ahover' ? $val['index'] : '<a href="'.$val['url'].'">'.$val['index'].'</a>' ?>
+                            </li>
+                            <?php } ?>
+                            <li><a href="<?= $nextUrl ?>">下一页</a></li>
                         </ul>
                     </div>
                 </div>
