@@ -10,9 +10,9 @@ return [
 //        ],
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;port=3306;dbname=sshb',
+            'dsn' => 'mysql:host=8.136.200.3;port=3306;dbname=sshb',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '19853426838',
             'charset' => 'utf8',
         ],
     ],

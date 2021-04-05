@@ -67,25 +67,27 @@ $this->title = CacheConfig::getConfigCache("title");
     </section>
     <section id="our-projects">
         <div class="container">
-            <div class="section-title"> <h1 class="dark-title"><a href="/a/case/">产品系列</a></h1> </div>
+            <div class="section-title"> <h1 class="dark-title"><a href="/product.html">产品系列</a></h1> </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 masonary-gallery">
+                    <?php foreach($product as $key => $val) { ?>
                     <div class="masonary-item width-1"> <a class="fancybox" href="javascript:;">
-                            <div class="img-wrap"> <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="Image"/>
+                            <div class="img-wrap"> <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>" alt="Image"/>
                                 <div class="content-wrap">
                                     <div class="border">
                                         <div class="content">
-                                            <h4 title="案例八">案例八</h4>
-                                            <span>定制案例</span> </div>
+                                            <h4 title="<?= $val->title ?>"><?= $val->description ?></h4>
+                                            <span><?= $val->title ?></span> </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
-                        <h3 class="iport-h3-title"><a href="/a/case/38.html" title="案例八">案例八</a></h3>
+                        <h3 class="iport-h3-title"><a href="/product/detail/<?= $val->id ?>.html" title="<?= $val->title ?>"><?= $val->title ?></a></h3>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
-            <div class="view-all-btn"><a href="/a/case/" class="view-all hvr-bounce-to-right">查看更多</a> </div>
+            <div class="view-all-btn"><a href="/product.html" class="view-all hvr-bounce-to-right">查看更多</a> </div>
         </div>
     </section>
     <section id="our-specialist">
