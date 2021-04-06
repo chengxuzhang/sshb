@@ -39,9 +39,9 @@ class SiteController extends \frontend\components\BaseController
      */
     public function actionIndex()
     {
-        $video = Video::find()->limit(4)->all();
         $news = News::find()->limit(2)->all();
         $product = Product::find()->limit(8)->orderBy('create_time desc')->all();
+        $video = Video::find()->limit(4)->orderBy('sort desc')->all();
         return $this->render('index',[
             'video' => $video,
             'news'  => $news,
