@@ -28,8 +28,7 @@ function send_request()
     {
         // serverUrl是 用户获取 '签名和Policy' 等信息的应用服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
         // serverUrl = 'http://88.88.88.88:8888/aliyun-oss-appserver-php/php/get.php'
-        serverUrl = '/line-couser-video/get-upload-video-key';
-		
+        serverUrl = '/video/get-upload-video-key';
         xmlhttp.open( "GET", serverUrl, false );
         xmlhttp.send( null );
         return xmlhttp.responseText

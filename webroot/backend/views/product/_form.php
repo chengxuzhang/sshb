@@ -45,7 +45,7 @@ use yii\widgets\ActiveForm;
     ]) ?>
 
     <div class="form-group">
-        <?= Html::button($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary',"lay-submit"=>"", "lay-filter"=>"mainform"]) ?>
+        <?= Html::button('保存', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary',"lay-submit"=>"", "lay-filter"=>"mainform"]) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

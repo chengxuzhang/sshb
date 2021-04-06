@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Create Video';
+$this->title = '新增视频';
 $this->params['breadcrumbs'][] = ['label' => 'Videos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\models;
+namespace backend\controllers;
 
 use Yii;
 use backend\models\Video;
@@ -13,7 +13,7 @@ use yii\web\Response;
 /**
  * VideoController implements the CRUD actions for Video model.
  */
-class VideoController extends \backend\components\BaseController
+class VideoController extends BaseController
 {
     /**
      * @inheritdoc
@@ -121,6 +121,15 @@ class VideoController extends \backend\components\BaseController
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    /**
+     * 获取上传视频的密码
+     */
+    public function actionGetUploadVideoKey(){
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $model = new Video();
+        return $model->getUploadVideoKey();
     }
 
     /**
