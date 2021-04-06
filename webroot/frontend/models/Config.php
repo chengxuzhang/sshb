@@ -12,7 +12,7 @@ class Config extends \frontend\components\BaseModel
      */
     public static function tableName()
     {
-        return 'config';
+        return 'pl_config';
     }
 
     /**

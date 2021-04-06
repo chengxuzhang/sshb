@@ -32,7 +32,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
                 <h3 class="dark-title"><a href="/about.html">公司简介</a> </h3>
                 <div class="f-about">
                     <p>
-                        <?= CacheConfig::getConfigCache('remark'); ?>
+                        <?= CacheConfig::getConfigCache('footer_remark'); ?>
                     </p>
                 </div>
                 <a href="/about.html" class="read-more">查看更多 <i class="fa fa-angle-double-right"></i></a>
@@ -66,7 +66,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget foot-qrcode hidden-sm hidden-xs">
                 <h3>扫描二维码</h3>
-                <div class="f-qrcode"> <img src="<?= Url::to('@web/images/qrcode.png') ?>"/> </div>
+                <div class="f-qrcode"> <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("qrcode") ?>"/> </div>
             </div>
         </div>
     </div>

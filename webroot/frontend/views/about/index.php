@@ -31,7 +31,7 @@ $this->title = $title;
             <div class="row">
                 <div class="main col-md-9 inner-left" role="main">
                     <div class="about-page-wrap">
-                        四顺环保公司是一家过滤机生产公司
+                        <?= CacheConfig::getConfigCache("remark") ?>
                     </div>
                 </div>
                 <aside class="sidebar col-md-3 inner-right" role="complementary">

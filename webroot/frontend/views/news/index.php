@@ -78,56 +78,7 @@ $this->title = '四顺环保';
                         </ul>
                     </div>
                 </div>
-                <aside class="sidebar col-md-3 inner-right" role="complementary">
-                    <section class="widget side-search">
-                        <h3 class="title">站内搜索</h3>
-                        <form class="searchform" name="formsearch" action="/plus/search.php">
-                            <input type="hidden" name="kwtype" value="0"/>
-                            <div class="sform-div">
-                                <label class="screen-reader-text" for="s"></label>
-                                <input type="text" value="" name="q" placeholder="输入关键字" id="s"/>
-                                <input type="submit" id="searchsubmit" value=""/>
-                            </div>
-                        </form>
-                    </section>
-                    <section class="widget side-news">
-                        <h3 class="title">热点新闻</h3>
-                        <div class="tabbed custom-tabbed">
-                            <div class="block current">
-                                <ul class="widget-list">
-                                    <li>
-                                        <figure><a href="/a/news/74.html"><img
-                                                        src="/uploads/180224/1-1P224130532246.jpg"/></a></figure>
-                                        <div class="sn-wrapper">
-                                            <p class="s-desc"><a href="/a/news/74.html" title="办公室装修设计中您是否忽略了“光健康">办公室装修设计中您是否忽略了“光健康</a>
-                                            </p>
-                                            <span class="comments"><i
-                                                        class="fa fa-calendar"></i> &nbsp;2018-02-24</span></div>
-                                    </li>
-                                    <li>
-                                        <figure><a href="/a/news/73.html"><img
-                                                        src="/uploads/allimg/180224/1-1P2241239480-L.jpg"/></a></figure>
-                                        <div class="sn-wrapper">
-                                            <p class="s-desc"><a href="/a/news/73.html" title="办公室装修公司为您打造标准合理的过道">办公室装修公司为您打造标准合理的过道</a>
-                                            </p>
-                                            <span class="comments"><i
-                                                        class="fa fa-calendar"></i> &nbsp;2018-02-24</span></div>
-                                    </li>
-                                    <li>
-                                        <figure><a href="/a/news/72.html"><img
-                                                        src="/uploads/allimg/180224/1-1P2241239280-L.jpg"/></a></figure>
-                                        <div class="sn-wrapper">
-                                            <p class="s-desc"><a href="/a/news/72.html" title="办公室设计室内环境私密性问题分析">办公室设计室内环境私密性问题分析</a>
-                                            </p>
-                                            <span class="comments"><i
-                                                        class="fa fa-calendar"></i> &nbsp;2018-02-24</span></div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                </aside>
+                <?php echo $this->render('/common/_right'); ?>
             </div>
         </div>
     </div>
