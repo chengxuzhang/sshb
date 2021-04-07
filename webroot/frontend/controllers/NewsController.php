@@ -48,7 +48,6 @@ class NewsController extends Controller
         $data = News::find()->where($condition); //Field为model层,在控制器刚开始use了field这个model,这儿可以直接写Field,开头大小写都可以,为了规范,我写的是大写
         $pages = new Pagination(['totalCount' =>$data->count(), 'pageSize' => '5']);    //实例化分页类,带上参数(总条数,每页显示条数)
         $model = $data->offset($pages->getOffset())->limit($pages->getLimit())->orderBy("update_time DESC")->with('category')->all();
-//        print_r($model);die;
 
         $position = News::find()->where(['position'=>10])->orderBy("update_time DESC")->limit(3)->all();
 
@@ -96,8 +95,6 @@ class NewsController extends Controller
         }
 
         $categoryList = Category::find()->all();
-//        print_r($categoryList);die;
-//        print_r($pageList);die;
 
         return $this->render('index', [
             'title' => $title,
