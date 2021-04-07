@@ -40,7 +40,7 @@ class ProductController extends Controller
         $currentPage = isset($get['page']) ? $get['page'] : 1;
 
         $data = Product::find()->where($condition); //Field为model层,在控制器刚开始use了field这个model,这儿可以直接写Field,开头大小写都可以,为了规范,我写的是大写
-        $pages = new Pagination(['totalCount' =>$data->count(), 'pageSize' => '5']);    //实例化分页类,带上参数(总条数,每页显示条数)
+        $pages = new Pagination(['totalCount' =>$data->count(), 'pageSize' => '9']);    //实例化分页类,带上参数(总条数,每页显示条数)
         $model = $data->offset($pages->getOffset())->limit($pages->getLimit())->orderBy("update_time DESC")->all();
 
         // 上一页地址

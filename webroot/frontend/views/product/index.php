@@ -14,7 +14,7 @@ $this->title = $title;
     <?php echo $this->render('/common/_topbar'); ?>
     <?php echo $this->render('/common/_header'); ?>
 
-    <section id="page-title" style="background-image:url(/skin/images/p.jpg);">
+    <section id="page-title" style="background-image:url(/images/p.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

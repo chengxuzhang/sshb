@@ -114,8 +114,7 @@ class NewsController extends Controller
      */
     public function actionView(){
         $id = Yii::$app->request->get("id");
-        $model = Document::find()->with(['article','category'])->where(['id'=>$id])->one();
-//        print_r($model);exit;
+        $model = News::find()->with(['article','category'])->where(['id'=>$id])->one();
         return $this->render('view', [
             'title' => $model->title,
             'model' => $model
