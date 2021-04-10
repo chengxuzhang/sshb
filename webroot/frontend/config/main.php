@@ -75,6 +75,7 @@ return [
             // 指定续接在URL后面的一个后缀，如 .html 之类的。仅在 enablePrettyUrl 启用时有效。    
             "suffix" => "",
             "rules" => [
+                // 新闻路由
                 ['pattern'=>'news','route'=>'news','suffix'=>'.html'],
                 [
                     'pattern'=>'news/<page:\d+>',
@@ -93,6 +94,20 @@ return [
                     'route'=>'news/view',
                     'suffix'=>'.html'
                 ],
+                // 视频路由
+                ['pattern'=>'video','route'=>'video','suffix'=>'.html'],
+                [
+                    'pattern'=>'video/<page:\d+>',
+                    'route'=>'video',
+                    'defaults' => ['page'=>1],
+                    'suffix'=>'.html'
+                ],
+                [
+                    'pattern'=>'video/detail/<id:\d+>',
+                    'route'=>'video/view',
+                    'suffix'=>'.html'
+                ],
+                ['pattern'=>'video-play','route'=>'video/video-play','suffix'=>'.html'],
                 // 产品路由
                 ['pattern'=>'product','route'=>'product','suffix'=>'.html'],
                 [

@@ -25,10 +25,12 @@ class AppAsset extends AssetBundle
         "css/sshb/style.css",
         "css/sshb/responsive.css",
         "css/sshb/tk.css",
+        "layui/css/layui.css",
     ];
     public $js = [
         "js/sshb/jquery.min.js",
-        "js/sshb/bootstrap.min.js"
+        "js/sshb/bootstrap.min.js",
+        'layui/layui.js',
     ];
     public $depends = [
         // 'yii\web\YiiAsset',
