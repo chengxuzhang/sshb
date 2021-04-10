@@ -44,7 +44,7 @@ $this->title = $title;
                                             </a>
                                         </figure>
                                         <h5 class="item-title">
-                                            <a href="javascript:;" class="open" title="<?= $val->title ?>" data-link="<?= $val->link ?>"> data-title="<?= $val->title ?>"
+                                            <a href="javascript:;" class="open" title="<?= $val->title ?>" data-link="<?= $val->link ?>" data-title="<?= $val->title ?>">
                                                 <?= $val->title ?>
                                             </a>
                                         </h5>
@@ -135,9 +135,9 @@ $this->title = $title;
                         success: function(layero, index) {
                             var body = layer.getChildFrame('body', index);
                             var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
-                            //if(url.indexOf("zhenjia") != -1){
-                            //    url = "<?//= CacheConfig::getConfigCache("endpoint") ?>//" + url;
-                            //}
+                            if(url.indexOf("http") === -1){
+                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>" + url;
+                            }
                             body.find('.yy_video').attr('src', url);
                             var index = url.lastIndexOf("/");
                             var filename = url.slice(index + 1);
@@ -154,9 +154,9 @@ $this->title = $title;
                         success: function(layero, index) {
                             var body = layer.getChildFrame('body', index);
                             var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
-                            //if(url.indexOf("zhenjia") != -1){
-                            //    url = "<?//= CacheConfig::getConfigCache("endpoint") ?>//" + url;
-                            //}
+                            if(url.indexOf("http") === -1){
+                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>" + url;
+                            }
                             body.find('.yy_video').attr('src', url);
                             var index = url.lastIndexOf("/");
                             var filename = url.slice(index + 1);

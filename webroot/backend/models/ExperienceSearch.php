@@ -18,8 +18,8 @@ class ExperienceSearch extends Experience
     public function rules()
     {
         return [
-            [['id', 'createTime', 'status'], 'integer'],
-            [['name', 'phone', 'type', 'province', 'city'], 'safe'],
+            [['id', 'create_time', 'status'], 'integer'],
+            [['name', 'phone', 'title', 'email', 'content'], 'safe'],
         ];
     }
 
@@ -60,17 +60,15 @@ class ExperienceSearch extends Experience
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'createTime' => $this->createTime,
+            'create_time' => $this->create_time,
             'status' => $this->status,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'phone', $this->phone])
-            ->andFilterWhere(['like', 'type', $this->type])
-            ->andFilterWhere(['like', 'province', $this->province])
-            ->andFilterWhere(['like', 'city', $this->city]);
-
-        $query->orderBy("createTime DESC");
+            ->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;
     }

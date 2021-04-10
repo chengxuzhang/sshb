@@ -2,10 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
-/* @var $this yii\web\View */
-/* @var $model backend\models\ExperienceSearch */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="experience-search">
@@ -13,26 +9,24 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
-        'options'=>['class'=>'form-inline']
+        'options'=>['class'=>'form-inline'],
     ]); ?>
 
-    <?= $form->field($model, 'name')->label(false)->textInput(['placeholder'=>'姓名']) ?>
+    <?= $form->field($model, 'name')->textInput(['placeholder'=>'姓名'])->label(false) ?>
 
-    <?= $form->field($model, 'phone')->label(false)->textInput(['placeholder'=>'电话']) ?>
+    <?= $form->field($model, 'phone')->textInput(['placeholder'=>'电话'])->label(false) ?>
 
-    <?= $form->field($model, 'type')->label(false)->textInput(['placeholder'=>'来源']) ?>
+    <?= $form->field($model, 'title')->textInput(['placeholder'=>'主题'])->label(false) ?>
 
-    <?= $form->field($model, 'province')->label(false)->textInput(['placeholder'=>'省份']) ?>
+    <?= $form->field($model, 'email')->textInput(['placeholder'=>'邮箱'])->label(false) ?>
 
-    <?php echo $form->field($model, 'city')->label(false)->textInput(['placeholder'=>'城市']) ?>
+    <?= $form->field($model, 'content')->textInput(['placeholder'=>'留言内容'])->label(false) ?>
 
-    <?php // echo $form->field($model, 'createTime') ?>
-
-    <?php echo $form->field($model, 'status')->dropDownList($model->statusParams ,['prompt'=>'选择处理结果'])->label(false) ?>
+    <?php echo $form->field($model, 'status')->textInput(['placeholder'=>'状态'])->label(false) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app/html', 'Search'), ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton(Yii::t('app/html', 'Reset'), ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton('查询', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('重置', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

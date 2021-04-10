@@ -7,53 +7,38 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\ExperienceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', '留言列表');
+$this->title = '留言列表';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="experience-index">
-    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('导出数据', ['export-excel'], ['class' => 'btn btn-info']) ?>
-    </p>
+    <?php echo $this->render('_search', [
+        'model' => $searchModel,
+    ]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'summary' => false,
+        'summary' => false, 
         'columns' => [
+            // ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
             'name',
             'phone',
-            'type',
-            'province',
-            'city',
+            'title',
+            'email',
+            'content',
             [
-                'attribute' => 'createTime',
+                'attribute' => 'create_time',
                 'value' => function ($model) {
-                    return date('Y-m-d H:i:s', $model->createTime);
+                    return date('Y-m-d H:i:s', $model->create_time);
                 },
             ],
-            // 'createTime:datetime',
-            [
-                'attribute' => 'status',
-                'value' => function ($model) {
-                    return $model->statusParams[$model->status];
-                },
-            ],
-
+            'status',
             [
                 'header' => '操作',
                 'class' => 'backend\components\ActionColumn',
-                'template' => '{del}',
-                'buttons' => [
-                    'del' => function ($url, $model, $key) {
-                        $options = [
-                            'title' => '完成处理',
-                            'class' => 'btn btn-danger btn-xs ajax-get confirm',
-                        ];
-                        return Html::a('完成处理', ['delete','id'=>$model->id], $options);
-                    },
-                ],
-                'headerOptions'=>['width'=>'120'],
+                'template' => '{view}',
+                'headerOptions'=>['width'=>'60'],
             ],
         ],
     ]); ?>

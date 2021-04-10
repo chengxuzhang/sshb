@@ -24,14 +24,16 @@ class Experience extends BaseModel
     public function rules()
     {
         return [
-            // username and password are both required
-            [['type'],'safe'],
-            [['name', 'phone', 'province', 'city'], 'required'],
+            [['create_time', 'status'], 'integer'],
+            [['name'], 'string', 'max' => 60],
+            [['phone'], 'string', 'max' => 11],
+            [['title'], 'string', 'max' => 255],
+            [['email', 'content'], 'string', 'max' => 255],
         ];
     }
 
     public function doSave(){
-        $this->createTime = time();
+        $this->create_time = time();
         $this->status = self::COMMON_STATUS_DELETED;
         if($this->save()){
             return true;
