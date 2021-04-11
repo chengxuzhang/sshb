@@ -5,7 +5,7 @@ use frontend\components\Html;
 use yii\helpers\Url;
 use frontend\components\NextUrlPager;
 
-$this->title = '四顺环保';
+$this->title = $title;
 ?>
 
 <?php echo $this->render('/common/_check'); ?>
@@ -21,8 +21,12 @@ $this->title = '四顺环保';
                     <div class="title">
                         <h1>新闻资讯</h1>
                     </div>
-                    <div class="page-breadcumb"><i class="fa fa-map-marker"></i> &nbsp;<span>当前位置： <a
-                                    href='http://demo559.admin868.com/'>主页</a> > <a href='/a/news/'>新闻资讯</a> > </span>
+                    <div class="page-breadcumb">
+                        <i class="fa fa-map-marker"></i> &nbsp;
+                        <span>当前位置：
+                            <a href='/'>主页</a> >
+                            <a href='/news.html'>新闻资讯</a>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -52,14 +56,14 @@ $this->title = '四顺环保';
                                         <li class="entry-date date">
                                             <time class="entry-date" datetime="2018-02-24"><?= date('Y-m-d', $val->create_time) ?></time>
                                         </li>
-                                        <li class="tags"><a href="/news.html">新闻资讯</a></li>
+                                        <li class="tags"><a href="/news/<?= $val->category->id ?>/1.html"><?= $val->category->title ?></a></li>
                                         <li class="byline author vcard">by
                                             <a href="javascript:void(0)" class="fn"> admin </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="entry-content">
-                                    <p><?= $val->description ?></p>
+                                    <p><?= mb_substr($val->description, 0, 100, 'utf-8') ?>...</p>
                                 </div>
                                 <a href="/news/detail/<?= $val->id ?>.html" class="read-more-link">查看详细</a>
                             </div>

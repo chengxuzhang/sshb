@@ -88,7 +88,7 @@ class NewsController extends Controller
             $pageList[] = $temp;
         }
 
-        $title = "新闻动态";
+        $title = "新闻资讯";
         if(isset($get['type'])){
             $category = Category::findOne($get['type']);
             $title = $category->title;

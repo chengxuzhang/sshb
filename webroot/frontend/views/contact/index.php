@@ -20,7 +20,7 @@ $this->title = $title;
                     <div class="title">
                         <h1>联系我们</h1>
                     </div>
-                    <div class="page-breadcumb"> <i class="fa fa-map-marker"></i> &nbsp;<span>当前位置： <a href='0/'>主页</a> > <a href='/contact.html'>联系我们</a></span> </div>
+                    <div class="page-breadcumb"> <i class="fa fa-map-marker"></i> &nbsp;<span>当前位置： <a href='/'>主页</a> > <a href='/contact.html'>联系我们</a></span> </div>
                 </div>
             </div>
         </div>

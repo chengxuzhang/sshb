@@ -1,9 +1,11 @@
 <?php
 
+use frontend\models\Category;
 use yii\helpers\Url;
 
 
 $controller = Yii::$app->controller->id;
+$category = Category::find()->all();
 
 ?>
 <header id="header-sec" class="header">
@@ -35,8 +37,9 @@ $controller = Yii::$app->controller->id;
                     <li class="Lev1 <?= $controller == 'product' ? 'current' : '' ?>"> <a href="/product.html" class="menu1 hvr-overline-from-left">产品系列 </a></li>
                     <li class="Lev1 dropdown <?= $controller == 'news' ? 'current' : '' ?>"> <a href="/news.html" class="menu1 hvr-overline-from-left">新闻资讯 <i class="fa fa-caret-down"></i></a>
                         <ul class="submenu dr-menu2">
-                            <li class="Lev2"> <a href="/news/1/1" class="menu2">公司动态</a> </li>
-                            <li class="Lev2"> <a href="/news/2/1" class="menu2">公司新闻</a> </li>
+                            <?php foreach($category as $cate) { ?>
+                            <li class="Lev2"> <a href="/news/<?= $cate->id ?>/1.html" class="menu2"><?= $cate->title ?></a> </li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <li class="Lev1 <?= $controller == 'video' ? 'current' : '' ?>"> <a href="/video.html" class="menu1 hvr-overline-from-left">企业视频</a></li>
