@@ -118,8 +118,8 @@ $this->title = CacheConfig::getConfigCache("title");
             <div class="row">
                 <div class="col-lg-3 col-md-3"> <img class="wow bounceInLeft" src="<?= Url::to('@web/images/man.png') ?>"/> </div>
                 <div class="col-lg-offset-3 col-md-offset-3 col-lg-9 col-md-9">
-                    <h2><span>精益求精，创造您空间的</span> 核心价值</h2>
-                    <p>集室内设计、工程施工、材料装饰为一体的专业化中型装饰企业</p>
+                    <h2><span>公司秉承</span>诚信、务实、进取、科技创造未来<span>的企业理念。</span></h2>
+                    <p>以“绿色，可持续发展”为目标，谒诚为客户服务!为环保事业贡献一份力。</p>
                     <p class="phone-contact"><b>
                             <?= CacheConfig::getConfigCache('phone'); ?>
                         </b> 或 <a href="/contact.html" class="hvr-bounce-to-right">联系我们</a> </p>
