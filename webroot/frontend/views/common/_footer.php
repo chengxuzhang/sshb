@@ -73,10 +73,10 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
     <div class="container">
         <div class="row">
             <div class="copyright pull-left" style="width:100%;text-align:center;">
-                <p> Copyright &copy; 2021  版权所有 </p>
-            </div>
-            <div class="credit pull-right hidden-sm hidden-xs" style="z-index:100;">
-                <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2021011841号</a></p>
+                <p>
+                    Copyright &copy; 2021  版权所有
+                    <a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2021011841号</a>
+                </p>
             </div>
         </div>
     </div>
