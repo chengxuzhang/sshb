@@ -34,36 +34,7 @@ $this->title = $title;
                         <?= CacheConfig::getConfigCache("remark") ?>
                     </div>
                 </div>
-                <aside class="sidebar col-md-3 inner-right" role="complementary">
-                    <section class="widget side-search">
-                        <h3 class="title">站内搜索</h3>
-                        <form  class="searchform" name="formsearch" action="/plus/search.php">
-                            <input type="hidden" name="kwtype" value="0" />
-                            <div class="sform-div">
-                                <label class="screen-reader-text" for="s"></label>
-                                <input type="text" value="" name="q" placeholder="输入关键字" id="s"/>
-                                <input type="submit" id="searchsubmit" value=""/>
-                            </div>
-                        </form>
-                    </section>
-                    <section class="widget side-news">
-                        <h3 class="title">热点新闻</h3>
-                        <div class="tabbed custom-tabbed">
-                            <div class="block current">
-                                <ul class="widget-list">
-                                    <li>
-                                        <figure><a href="/a/news/74.html">
-                                                <img src="<?= Url::to('@web/images/news.jpg') ?>" />
-                                            </a></figure>
-                                        <div class="sn-wrapper">
-                                            <p class="s-desc"><a href="/a/news/74.html" title="办公室装修设计中您是否忽略了“光健康">办公室装修设计中您是否忽略了“光健康</a></p>
-                                            <span class="comments"><i class="fa fa-calendar"></i> &nbsp;2018-02-24</span> </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-                </aside>
+                <?php echo $this->render('/common/_right'); ?>
             </div>
         </div>
     </div>
