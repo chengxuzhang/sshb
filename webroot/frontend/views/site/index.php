@@ -97,11 +97,15 @@ $this->title = CacheConfig::getConfigCache("title");
                 <?php foreach($video as $val) { ?>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 wow zoomIn hvr-float-shadow team-item" data-wow-duration=".5s" data-wow-delay=".5s">
                     <div class="single-member hvr-bounce-to-bottom">
-                        <a href="javascript:;" data-link="<?= $val->link ?>" class="team-url">
+                        <a href="javascript:;" data-link="<?= $val->link ?>" data-title="<?= $val->title ?>" class="team-url see-video">
                             <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="<?= $val->title ?>"/>
                         </a>
                         <div class="info hvr-bounce-to-top">
-                            <h2><a href="javascript:;" data-link="<?= $val->link ?>" title="<?= $val->title ?>"><?= $val->title ?></a></h2>
+                            <h2>
+                                <a href="javascript:;" class="see-video" data-link="<?= $val->link ?>" title="<?= $val->title ?>" data-title="<?= $val->title ?>">
+                                    <?= $val->title ?>
+                                </a>
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -159,46 +163,6 @@ $this->title = CacheConfig::getConfigCache("title");
     </section>
     <?php echo $this->render('/common/_footer'); ?>
 </div>
-<?= Html::jsFile('@web/js/sshb/wow.js') ?>
-<?= Html::jsFile('@web/js/sshb/owl.carousel.min.js') ?>
-<?= Html::jsFile('@web/js/sshb/jquery.themepunch.tools.min.js') ?>
-<?= Html::jsFile('@web/js/sshb/jquery.themepunch.revolution.min.js') ?>
-<?= Html::jsFile('@web/js/sshb/jquery.fancybox.pack.js') ?>
-<?= Html::jsFile('@web/js/sshb/custom.js') ?>
-<?php echo $this->render('/common/_nav'); ?>
-<?= Html::cssFile('@web/css/sshb/jquery.mmenu.all.css') ?>
-<?= Html::jsFile('@web/js/sshb/jquery.mmenu.all.min.js') ?>
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        var mmenu=$('nav#mmenu').mmenu({
-            slidingSubmenus: true,
-            classes		: 'mm-white', //mm-fullscreen mm-light
-            extensions	: [ "theme-white" ],
-            offCanvas	: {
-                position: "right", //left, top, right, bottom
-                zposition: "front" //back, front,next
-                //modal		: true
-            },
-            searchfield		: false,
-            counters		: false,
-            //navbars		: {
-            //content : [ "prev", "title", "next" ]
-            //},
-            navbar 		: {
-                title : "网站导航"
-            },
-            header			: {
-                add		: true,
-                update	: true,
-                title	: "网站导航"
-            }
-        });
-        $(".closemenu").click(function() {
-            var mmenuAPI = $("#mmenu").data( "mmenu" );
-            mmenuAPI.close();
-        });
-    });
-</script>
 <style>
     .copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
 </style>

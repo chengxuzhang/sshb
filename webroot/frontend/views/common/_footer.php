@@ -1,9 +1,7 @@
 <?php
-use frontend\components\ActiveSmarty;
 use frontend\components\CacheConfig;
 use frontend\components\Html;
 use frontend\models\News;
-use yii\helpers\Url;
 
 
 $news = News::find()->limit(4)->orderBy('create_time desc')->all();
@@ -75,11 +73,102 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
     <div class="container">
         <div class="row">
             <div class="copyright pull-left" style="width:100%;text-align:center;">
-                <p> Copyright &copy; 2002-2017  版权所有 </p>
+                <p> Copyright &copy; 2021  版权所有 </p>
             </div>
             <div class="credit pull-right hidden-sm hidden-xs" style="z-index:100;display:none;">
-                <p>技术支持：<a href="http:///" target="_blank">响应式网站模板</a></p>
+                <p><a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2021011841号</a></p>
             </div>
         </div>
     </div>
 </section>
+
+<?= Html::jsFile('@web/js/sshb/wow.js') ?>
+<?= Html::jsFile('@web/js/sshb/owl.carousel.min.js') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.themepunch.tools.min.js') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.themepunch.revolution.min.js') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.fancybox.pack.js') ?>
+<?= Html::jsFile('@web/js/sshb/custom.js') ?>
+<?php echo $this->render('/common/_nav'); ?>
+<?= Html::cssFile('@web/css/sshb/jquery.mmenu.all.css') ?>
+<?= Html::jsFile('@web/js/sshb/jquery.mmenu.all.min.js') ?>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        var mmenu=$('nav#mmenu').mmenu({
+            slidingSubmenus: true,
+            classes		: 'mm-white', //mm-fullscreen mm-light
+            extensions	: [ "theme-white" ],
+            offCanvas	: {
+                position: "right", //left, top, right, bottom
+                zposition: "front" //back, front,next
+                //modal		: true
+            },
+            searchfield		: false,
+            counters		: false,
+            //navbars		: {
+            //content : [ "prev", "title", "next" ]
+            //},
+            navbar 		: {
+                title : "网站导航"
+            },
+            header			: {
+                add		: true,
+                update	: true,
+                title	: "网站导航"
+            }
+        });
+        $(".closemenu").click(function() {
+            var mmenuAPI = $("#mmenu").data( "mmenu" );
+            mmenuAPI.close();
+        });
+
+        layui.use(['layer'], function () {
+            layer = layui.layer;
+
+            // 查看视频
+            $(".see-video").click(function (){
+                var url = $(this).data('link');
+                var title = $(this).data('title');
+                if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                    layer.open({
+                        type: 2,
+                        title: title,
+                        maxmin: false,
+                        shadeClose: true, //点击遮罩关闭层
+                        close:false,
+                        area : ['100vw' , '100vh'],
+                        content: '/video-play.html?vt=1',
+                        success: function(layero, index) {
+                            var body = layer.getChildFrame('body', index);
+                            var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                            if(url.indexOf("http") === -1){
+                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>" + url;
+                            }
+                            body.find('.yy_video').attr('src', url);
+                            var index = url.lastIndexOf("/");
+                            var filename = url.slice(index + 1);
+                        }
+                    });
+                }else{
+                    layer.open({
+                        type: 2,
+                        title: title,
+                        maxmin: false,
+                        shadeClose: true, //点击遮罩关闭层
+                        area: ['1000px', '660px'],
+                        content: '/video-play.html',
+                        success: function(layero, index) {
+                            var body = layer.getChildFrame('body', index);
+                            var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
+                            if(url.indexOf("http") === -1){
+                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>" + url;
+                            }
+                            body.find('.yy_video').attr('src', url);
+                            var index = url.lastIndexOf("/");
+                            var filename = url.slice(index + 1);
+                        }
+                    })
+                }
+            })
+        });
+    });
+</script>
