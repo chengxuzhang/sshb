@@ -10,7 +10,7 @@ key = ''
 expire = 0
 g_object_name = ''
 g_object_name_type = ''
-now = timestamp = Date.parse(new Date()) / 1000; 
+now = timestamp = Date.parse(new Date()) / 1000;
 
 function send_request()
 {
@@ -23,7 +23,7 @@ function send_request()
     {
         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
     }
-  
+
     if (xmlhttp!=null)
     {
         // serverUrl是 用户获取 '签名和Policy' 等信息的应用服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
@@ -46,7 +46,7 @@ function check_object_radio() {
 function get_signature()
 {
     // 可以判断当前expire是否超过了当前时间， 如果超过了当前时间， 就重新取一下，3s 作为缓冲。
-    now = timestamp = Date.parse(new Date()) / 1000; 
+    now = timestamp = Date.parse(new Date()) / 1000;
     if (expire < now + 3)
     {
         body = send_request()
@@ -56,7 +56,7 @@ function get_signature()
         accessid = obj['accessid']
         signature = obj['signature']
         expire = parseInt(obj['expire'])
-        callbackbody = obj['callback'] 
+        callbackbody = obj['callback']
         key = obj['dir']
         return true;
     }
@@ -64,12 +64,12 @@ function get_signature()
 };
 
 function random_string(len) {
-　　len = len || 32;
-　　var chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';   
-　　var maxPos = chars.length;
-　　var pwd = '';
-　　for (i = 0; i < len; i++) {
-    　　pwd += chars.charAt(Math.floor(Math.random() * maxPos));
+    len = len || 32;
+    var chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+    var maxPos = chars.length;
+    var pwd = '';
+    for (i = 0; i < len; i++) {
+        pwd += chars.charAt(Math.floor(Math.random() * maxPos));
     }
     return pwd;
 }
@@ -124,7 +124,7 @@ function set_upload_param(up, filename, ret)
     new_multipart_params = {
         'key' : g_object_name,
         'policy': policyBase64,
-        'OSSAccessKeyId': accessid, 
+        'OSSAccessKeyId': accessid,
         'success_action_status' : '200', //让服务端返回200,不然，默认会返回204
         'callback' : callbackbody,
         'signature': signature,
@@ -139,65 +139,64 @@ function set_upload_param(up, filename, ret)
 }
 
 var uploader = new plupload.Uploader({
-	runtimes : 'html5,flash,silverlight,html4',
-	browse_button : 'selectfiles', 
+    runtimes : 'html5,flash,silverlight,html4',
+    browse_button : 'selectfiles',
     //multi_selection: false,
-	container: document.getElementById('container'),
-	flash_swf_url : 'lib/plupload-2.1.2/js/Moxie.swf',
-	silverlight_xap_url : 'lib/plupload-2.1.2/js/Moxie.xap',
+    container: document.getElementById('container'),
+    flash_swf_url : 'lib/plupload-2.1.2/js/Moxie.swf',
+    silverlight_xap_url : 'lib/plupload-2.1.2/js/Moxie.xap',
     url : 'http://oss.aliyuncs.com',
 
     filters: {
         mime_types : [ //只允许上传视频文件
-        { title : "Video files", extensions : "mp4,ts,m3u8" },
+            {
+                title : "Video files",
+                extensions : "mp4,ts,m3u8"
+            }
         ],
-        max_file_size : '2048mb', //最大只能上传10mb的文件
+        max_file_size : '3000mb', //最大只能上传10mb的文件
         prevent_duplicates : true //不允许选取重复文件
     },
 
-	init: {
-		PostInit: function() {
-			document.getElementById('ossfile').innerHTML = '';
-			document.getElementById('postfiles').onclick = function() {
+    init: {
+        PostInit: function() {
+            document.getElementById('ossfile').innerHTML = '';
+            document.getElementById('postfiles').onclick = function() {
                 set_upload_param(uploader, '', false);
                 return false;
-			};
-		},
+            };
+        },
 
-		FilesAdded: function(up, files) {
-			plupload.each(files, function(file) {
-				document.getElementById('ossfile').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ')<b></b>'
-				+'<div class="progress"><div class="progress-bar" style="width: 0%"></div></div>'
-				+'</div>';
-			});
-		},
+        FilesAdded: function(up, files) {
+            plupload.each(files, function(file) {
+                document.getElementById('ossfile').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ')<b></b>'
+                    +'<div class="progress"><div class="progress-bar" style="width: 0%"></div></div>'
+                    +'</div>';
+            });
+        },
 
-		BeforeUpload: function(up, file) {
+        BeforeUpload: function(up, file) {
             check_object_radio();
             set_upload_param(up, file.name, true);
         },
 
-		UploadProgress: function(up, file) {
-			var d = document.getElementById(file.id);
-			d.getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+        UploadProgress: function(up, file) {
+            var d = document.getElementById(file.id);
+            d.getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
             var prog = d.getElementsByTagName('div')[0];
-			var progBar = prog.getElementsByTagName('div')[0]
-			progBar.style.width= 2*file.percent+'px';
-			progBar.setAttribute('aria-valuenow', file.percent);
-		},
+            var progBar = prog.getElementsByTagName('div')[0]
+            progBar.style.width= 2*file.percent+'px';
+            progBar.setAttribute('aria-valuenow', file.percent);
+        },
 
-		FileUploaded: function(up, file, info) {
+        FileUploaded: function(up, file, info) {
             if (info.status == 200)
             {
                 var uploadFileName = get_uploaded_object_name(file.name);
                 document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '视频上传成功, 视频地址:' + uploadFileName + ' 回调服务器返回的内容是:' + info.response;
-                if(uploadFileName.indexOf("mp4") != -1 || uploadFileName.indexOf("m3u8") != -1){
-                    if(uploadType == 1){
-                        freeVideoLinkList.push(uploadFileName);
-                    }else if(uploadType == 2){
-                        videoLinkList.push(uploadFileName);
-                    }
-                }
+                // if(uploadFileName.indexOf("mp4") != -1 || uploadFileName.indexOf("m3u8") != -1){
+                    videoLinkList.push(uploadFileName);
+                // }
             }
             else if (info.status == 203)
             {
@@ -206,10 +205,10 @@ var uploader = new plupload.Uploader({
             else
             {
                 document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = info.response;
-            } 
-		},
+            }
+        },
 
-		Error: function(up, err) {
+        Error: function(up, err) {
             if (err.code == -600) {
                 document.getElementById('console').appendChild(document.createTextNode("\n选择的文件太大了,可以根据应用情况，在upload.js 设置一下上传的最大大小"));
             }
@@ -219,12 +218,12 @@ var uploader = new plupload.Uploader({
             else if (err.code == -602) {
                 document.getElementById('console').appendChild(document.createTextNode("\n这个文件已经上传过一遍了"));
             }
-            else 
+            else
             {
                 document.getElementById('console').appendChild(document.createTextNode("\nError xml:" + err.response));
             }
-		}
-	}
+        }
+    }
 });
 
 uploader.init();
