@@ -132,7 +132,7 @@ use yii\widgets\ActiveForm;
         });
 
         // 页面初始化设置视频
-        var videoSrc = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname"); ?>" + $("#video").val();
+        var videoSrc = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname"); ?>/" + $("#video").val();
         if($("#video").val() != ''){
             var sourceVideo = $("<source src=\""+ videoSrc +"\">");
             $("#videoTag").append(sourceVideo);

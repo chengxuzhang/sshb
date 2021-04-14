@@ -141,7 +141,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
                             var body = layer.getChildFrame('body', index);
                             var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
                             if(url.indexOf("http") === -1){
-                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>" + url;
+                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>/" + url;
                             }
                             body.find('.yy_video').attr('src', url);
                             var index = url.lastIndexOf("/");
@@ -160,7 +160,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
                             var body = layer.getChildFrame('body', index);
                             var iframeWin = window[layero.find('iframe')[0]['name']]; //得到iframe页的窗口对象，执行iframe页的方法：iframeWin.method();
                             if(url.indexOf("http") === -1){
-                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>" + url;
+                                url = "<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") ?>/" + url;
                             }
                             body.find('.yy_video').attr('src', url);
                             var index = url.lastIndexOf("/");
