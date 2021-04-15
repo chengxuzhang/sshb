@@ -11,12 +11,12 @@ interface GlobalConst {
         COMMON_STATUS_DELETED = 20;
 
     const
-        HTTP_OSS_DOMAIN = "http://pinle123.oss-cn-beijing.aliyuncs.com/",
-        HTTP_OSS_UPLOAD_URL = "http://oss-cn-beijing.aliyuncs.com",
+        HTTP_OSS_DOMAIN = "http://files.4shb.com/",
+        HTTP_OSS_UPLOAD_URL = "http://files.4shb.com",
         HTTP_OSS_ACCESSID = "LTAIYaTEUX7WTxUt",
         HTTP_OSS_ACCESSKEY = "L6Z3MgoKbSub0CAyxiHbJRwhW1Pgtx",
-        HTTP_OSS_BUCKET = "pinle123",
-        HTTP_OSS_DIRNAME = "pinle";
+        HTTP_OSS_BUCKET = "sshb",
+        HTTP_OSS_DIRNAME = "sshb";
 
     const
         COUPON_TYPE_NOMK = 1, // 无门槛

@@ -163,7 +163,7 @@ if ( ! function_exists( 'gmt_iso8601' ) ) {
 if ( ! function_exists( 'getOssUrl' ) ) {
     function getOssUrl()
     {
-        return "http://pinle123.oss-cn-beijing.aliyuncs.com/pinle";
+        return "";
     }
 }
 
