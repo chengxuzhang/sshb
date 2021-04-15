@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\components\CacheConfig;
 use backend\models\ProductArticle;
 use Yii;
 use backend\models\Product;
@@ -40,10 +41,12 @@ class ProductController extends BaseController
     {
         $searchModel = new ProductSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $category = getConfigList(CacheConfig::getConfigCache('product_type'), ":");
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'category' => $category,
         ]);
     }
 

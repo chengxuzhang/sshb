@@ -6,6 +6,7 @@ use yii\helpers\Url;
 
 $controller = Yii::$app->controller->id;
 $category = Category::find()->all();
+$productType = getConfigList(\frontend\components\CacheConfig::getConfigCache('product_type'), ":");
 
 ?>
 <header id="header-sec" class="header">
@@ -34,7 +35,13 @@ $category = Category::find()->all();
                 <ul class="mainmenu pull-right">
                     <li  class='Lev1 <?= $controller == 'site' ? 'current' : '' ?>' > <a href="/" class="menu1 hvr-overline-from-left">网站首页</a></li>
                     <li class="Lev1 <?= $controller == 'about' ? 'current' : '' ?>"> <a href="/about.html" class="menu1 hvr-overline-from-left">关于我们</a></li>
-                    <li class="Lev1 <?= $controller == 'product' ? 'current' : '' ?>"> <a href="/product.html" class="menu1 hvr-overline-from-left">产品系列 </a></li>
+                    <li class="Lev1 dropdown <?= $controller == 'product' ? 'current' : '' ?>"> <a href="/product.html" class="menu1 hvr-overline-from-left">产品系列 <i class="fa fa-caret-down"></i></a>
+                        <ul class="submenu dr-menu2">
+                            <?php foreach($productType as $pk => $pt) { ?>
+                                <li class="Lev2"> <a href="/product/<?= $pk ?>/1.html" class="menu2"><?= $pt ?></a> </li>
+                            <?php } ?>
+                        </ul>
+                    </li>
                     <li class="Lev1 dropdown <?= $controller == 'news' ? 'current' : '' ?>"> <a href="/news.html" class="menu1 hvr-overline-from-left">新闻资讯 <i class="fa fa-caret-down"></i></a>
                         <ul class="submenu dr-menu2">
                             <?php foreach($category as $cate) { ?>

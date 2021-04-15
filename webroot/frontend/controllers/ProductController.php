@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\components\CacheConfig;
 use frontend\models\Product;
 use Yii;
 use yii\data\Pagination;
@@ -37,6 +38,9 @@ class ProductController extends Controller
     {
         $get = Yii::$app->request->get();
         $condition = array();
+        if(isset($get['type'])){
+            $condition['category_id'] = $get['type'];
+        }
         $currentPage = isset($get['page']) ? $get['page'] : 1;
 
         $data = Product::find()->where($condition); //Field为model层,在控制器刚开始use了field这个model,这儿可以直接写Field,开头大小写都可以,为了规范,我写的是大写
@@ -47,25 +51,41 @@ class ProductController extends Controller
         if($currentPage <= 1){
             $prevUrl = null;
         }else{
-            $prevUrl = "/product/" . ($currentPage - 1) . ".html";
+            if(isset($get['type'])){
+                $prevUrl = "/product/" . $get['type'] . "/" . ($currentPage - 1) . ".html";
+            }else{
+                $prevUrl = "/product/" . ($currentPage - 1) . ".html";
+            }
         }
 
         // 下一页地址
         if($currentPage >= $pages->getPageCount()){
             $nextUrl = null;
         }else{
-            $nextUrl = "/product/" . ($currentPage + 1) . ".html";
+            if(isset($get['type'])){
+                $nextUrl = "/product/" . $get['type'] . "/" . ($currentPage + 1) . ".html";
+            }else{
+                $nextUrl = "/product/" . ($currentPage + 1) . ".html";
+            }
         }
 
         $pageList = [];
         for ($i = 1;$i<=$pages->getPageCount();$i++){
-            $params = $i . ".html";
+            if(isset($get['type'])){
+                $params = $get['type'] . "/" . $i . ".html";
+            }else{
+                $params = $i . ".html";
+            }
             $temp = [
                 'url' => "/product/" . $params,
                 'index' => $i,
                 'current' => $i == $currentPage ? "Ahover" : ""
             ];
             $pageList[] = $temp;
+        }
+
+        if(isset($get['type'])){
+            $this->title = getConfigList(CacheConfig::getConfigCache('product_type'), ":")[$get['type']];
         }
 
         return $this->render('index', [

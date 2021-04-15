@@ -11,7 +11,7 @@ $this->title = '产品列表';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-index">
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('新增产品', ['create'], ['class' => 'btn btn-success']) ?>
@@ -36,6 +36,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'update_time',
                 'value' => function ($model) {
                     return date('Y-m-d H:i:s', $model->update_time);
+                },
+            ],
+            [
+                'attribute' => 'category_id',
+                'value' => function ($model, $category) {
+                    return $category[$model->category_id];
                 },
             ],
             [

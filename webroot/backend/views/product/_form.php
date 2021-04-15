@@ -23,6 +23,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->dropDownList($model->commonStatus ,['prompt'=>'选择状态']) ?>
 
+    <?= $form->field($model, 'category_id')->dropDownList(getConfigList(CacheConfig::getConfigCache('product_type'), ":") ,['prompt'=>'选择状态']) ?>
+
     <?= $form->field($model, 'cover_url', [
         'template' => "<div class=\"layui-form-item\">{label}\n<div class=\"col-lg-4\"><div class=\"layui-upload\">
                         <button type=\"button\" class=\"layui-btn\" id=\"test1\">上传图片</button>
