@@ -65,7 +65,7 @@ class Video extends \backend\components\BaseModel
         $host = CacheConfig::getConfigCache("endpointOld");
         // $callbackUrl为上传回调服务器的URL，请将下面的IP和Port配置为您自己的真实URL信息。
         $callbackUrl = CacheConfig::getConfigCache("callback");
-        $dir = 'video/' . date("Ymd") ."/". Yii::$app->getSecurity()->generateRandomString() . "/";         // 用户上传文件时指定的前缀。
+        $dir = CacheConfig::getConfigCache("dirname") . '/video/' . date("Ymd") ."/". Yii::$app->getSecurity()->generateRandomString() . "/";         // 用户上传文件时指定的前缀。
 
         $callback_param = array('callbackUrl' => $callbackUrl,
             'callbackBody'=>'filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}',
