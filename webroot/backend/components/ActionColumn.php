@@ -170,7 +170,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                     'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
                     'data-method' => 'post',
                     'data-pjax' => '0',
-                    'class' => 'btn btn-default btn-xs ajax-get confirm',
+                    'class' => 'btn btn-default btn-xs',
                 ], $this->buttonOptions);
                 return Html::a("<i class='glyphicon glyphicon-trash'></i>  ".Yii::t('app/html','Delete'), $url, $options);
             };

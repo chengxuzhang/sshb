@@ -98,7 +98,7 @@ $this->title = CacheConfig::getConfigCache("title");
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 wow zoomIn hvr-float-shadow team-item" data-wow-duration=".5s" data-wow-delay=".5s">
                     <div class="single-member hvr-bounce-to-bottom">
                         <a href="javascript:;" data-link="<?= $val->link ?>" data-title="<?= $val->title ?>" class="team-url see-video">
-                            <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="<?= $val->title ?>"/>
+                            <img src="<?= <?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->pic ?> ?>" alt="<?= $val->title ?>"/>
                         </a>
                         <div class="info hvr-bounce-to-top">
                             <h2>

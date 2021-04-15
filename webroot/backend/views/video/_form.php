@@ -115,10 +115,9 @@ use yii\widgets\ActiveForm;
                 });
             }
             ,done: function(res){
-                console.log(res);
                 if(res.state == 'SUCCESS'){
                     layer.msg("上传成功！");
-                    $("#coverUrl").val(res.url);
+                    $("#picUrl").val(res.url);
                 }
             }
             ,error: function(){
