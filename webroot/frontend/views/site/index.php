@@ -67,11 +67,11 @@ $this->title = CacheConfig::getConfigCache("title");
     </section>
     <section id="our-projects">
         <div class="container">
-            <div class="section-title"> <h1 class="dark-title"><a href="/product.html">产品系列</a></h1> </div>
+            <div class="section-title"> <h1 class="dark-title"><a href="/product.html" target="_blank">产品系列</a></h1> </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 masonary-gallery">
                     <?php foreach($product as $key => $val) { ?>
-                    <div class="masonary-item width-1"> <a class="fancybox" href="javascript:;">
+                    <div class="masonary-item width-1"> <a class="fancybox" href="/product/detail/<?= $val->id ?>.html" target="_blank">
                             <div class="img-wrap">
                                 <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>" alt="Image"/>
                                 <div class="content-wrap">
@@ -92,12 +92,12 @@ $this->title = CacheConfig::getConfigCache("title");
                     <?php } ?>
                 </div>
             </div>
-            <div class="view-all-btn"><a href="/product.html" class="view-all hvr-bounce-to-right">查看更多</a> </div>
+            <div class="view-all-btn"><a href="/product.html" class="view-all hvr-bounce-to-right" target="_blank">查看更多</a> </div>
         </div>
     </section>
     <section id="our-specialist">
         <div class="container">
-            <div class="section-title"> <h1><a href="/video.html">网站视频</a></h1> </div>
+            <div class="section-title"> <h1><a href="/video.html" target="_blank">网站视频</a></h1> </div>
             <div class="row">
                 <?php foreach($video as $val) { ?>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 wow zoomIn hvr-float-shadow team-item" data-wow-duration=".5s" data-wow-delay=".5s">
@@ -128,14 +128,14 @@ $this->title = CacheConfig::getConfigCache("title");
                     <p>以“绿色，可持续发展”为目标，谒诚为客户服务!为环保事业贡献一份力。</p>
                     <p class="phone-contact"><b>
                             <?= CacheConfig::getConfigCache('phone'); ?>
-                        </b> 或 <a href="/contact.html" class="hvr-bounce-to-right">联系我们</a> </p>
+                        </b> 或 <a href="/contact.html" class="hvr-bounce-to-right" target="_blank">联系我们</a> </p>
                 </div>
             </div>
         </div>
     </section>
     <section id="blog">
         <div class="container">
-            <div class="section-title"> <h1><a href="/news.html">新闻资讯</a></h1> </div>
+            <div class="section-title"> <h1><a href="/news.html" target="_blank">新闻资讯</a></h1> </div>
             <div class="row">
                 <?php foreach($news as $val) { ?>
                 <div class="col-lg-6 col-md-6 col-sm-6 blog-wrap hvr-float-shadow">
@@ -144,11 +144,11 @@ $this->title = CacheConfig::getConfigCache("title");
                         <h2><i class="fa fa-calendar"></i><?= date('Y-m-d', $val->create_time) ?></h2>
                     </div>
                     <div class="col-lg-6 col-md-12 content-wrap h-300">
-                        <h2><a href="/news/<?= $val->id ?>.html" title="<?= $val->title ?>"><?= $val->title ?></a></h2>
+                        <h2><a href="/news/<?= $val->id ?>.html" title="<?= $val->title ?>" target="_blank"><?= $val->title ?></a></h2>
                         <p class="desc"><?= mb_substr($val->description, 0, 60, 'utf-8') ?>...</p>
                         <ul>
                             <li><span><b>发布者：</b> admin</span></li>
-                            <li><a href="/news/<?= $val->id ?>.html" class="read-more">查看更多</a></li>
+                            <li><a href="/news/<?= $val->id ?>.html" class="read-more" target="_blank">查看更多</a></li>
                         </ul>
                     </div>
                 </div>
