@@ -45,14 +45,14 @@ $this->title = CacheConfig::getConfigCache("title");
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 hvr-bounce-to-left adv-text-one">
                         <h2><?= CacheConfig::getConfigCache("product_title_1") ?></h2>
-                        <p>01、<?= CacheConfig::getConfigCache("product_remark_1") ?></p>
+                        <p><?= CacheConfig::getConfigCache("product_remark_1") ?></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn whyitem-2" data-wow-duration=".5s" data-wow-delay=".5s">
                     <div class="img-holder">
                         <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_2") ?>" alt=""/>
                     </div>
-                    <h2>02、<?= CacheConfig::getConfigCache("product_title_2") ?></h2>
+                    <h2><?= CacheConfig::getConfigCache("product_title_2") ?></h2>
                     <p><?= CacheConfig::getConfigCache("product_remark_2") ?></p>
                 </div>
 
@@ -60,7 +60,7 @@ $this->title = CacheConfig::getConfigCache("title");
                     <div class="img-holder">
                         <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_3") ?>" alt=""/>
                     </div>
-                    <h2>03、<?= CacheConfig::getConfigCache("product_title_3") ?></h2>
+                    <h2><?= CacheConfig::getConfigCache("product_title_3") ?></h2>
                     <p><?= CacheConfig::getConfigCache("product_remark_3") ?></p>
                 </div> </div>
         </div>
@@ -72,7 +72,8 @@ $this->title = CacheConfig::getConfigCache("title");
                 <div class="col-lg-12 col-md-12 masonary-gallery">
                     <?php foreach($product as $key => $val) { ?>
                     <div class="masonary-item width-1"> <a class="fancybox" href="javascript:;">
-                            <div class="img-wrap"> <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>" alt="Image"/>
+                            <div class="img-wrap">
+                                <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>" alt="Image"/>
                                 <div class="content-wrap">
                                     <div class="border">
                                         <div class="content">
@@ -82,7 +83,11 @@ $this->title = CacheConfig::getConfigCache("title");
                                 </div>
                             </div>
                         </a>
-                        <h3 class="iport-h3-title"><a href="/product/detail/<?= $val->id ?>.html" title="<?= $val->title ?>"><?= $val->title ?></a></h3>
+                        <h3 class="iport-h3-title">
+                            <a href="/product/detail/<?= $val->id ?>.html" title="<?= $val->title ?>" target="_blank">
+                                <?= $val->title ?>
+                            </a>
+                        </h3>
                     </div>
                     <?php } ?>
                 </div>
@@ -135,7 +140,7 @@ $this->title = CacheConfig::getConfigCache("title");
                 <?php foreach($news as $val) { ?>
                 <div class="col-lg-6 col-md-6 col-sm-6 blog-wrap hvr-float-shadow">
                     <div class="col-lg-6 col-md-12 img-wrap h-300">
-                        <img src="<?= Url::to('@web/images/1-1P22413034L57.jpg') ?>" alt="<?= $val->title ?>"/>
+                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>" alt="<?= $val->title ?>"/>
                         <h2><i class="fa fa-calendar"></i><?= date('Y-m-d', $val->create_time) ?></h2>
                     </div>
                     <div class="col-lg-6 col-md-12 content-wrap h-300">
@@ -151,7 +156,7 @@ $this->title = CacheConfig::getConfigCache("title");
             </div>
         </div>
     </section>
-    <section id="clients">
+    <section id="clients" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
