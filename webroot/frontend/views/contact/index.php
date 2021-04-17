@@ -44,9 +44,9 @@ $this->title = $title;
                             <span style="color:#999999;">公司邮箱：</span><?= CacheConfig::getConfigCache('email') ?><br />
                             <span style="color:#999999;">公司地址：</span><?= CacheConfig::getConfigCache('address') ?><br />
                             <br><br><br>
-                            <p style="font-size: 14px;">
+                            <p>
                                 <!--这里放个百度地图-->
-                                <div class="map" id="allmap" style="width: 100%;height: 500px;"></div>
+                                <div class="map" id="allmap" style="width: 100%;height: 500px;font-size: 14px;"></div>
                             </p>
                             <br>
                             <br>

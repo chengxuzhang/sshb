@@ -83,9 +83,12 @@ use yii\widgets\ActiveForm;
 <script>
     var picUrl = $("#picUrl").val();
     if(picUrl != '') $('#demo1').attr('src', "<?= CacheConfig::getConfigCache("endpoint").CacheConfig::getConfigCache("dirname"); ?>" + picUrl);
-    layui.use(['form','upload'], function(){
+    layui.config({
+        base: '/layui/lay/modules/' //layui自定义layui组件目录
+    }).use(['form','upload', 'croppers'], function(){
         var form = layui.form;
         var upload = layui.upload;
+        var croppers = layui.croppers;
 
         //监听提交
         form.on('submit(mainform)', function(data){
@@ -101,34 +104,21 @@ use yii\widgets\ActiveForm;
             return false;
         });
 
-        //普通图片上传
-        var uploadInst = upload.render({
+        //创建一个头像上传组件
+        croppers.render({
             elem: '#test1'
-            ,field: 'upload'
-            ,accept: 'file' //普通文件
-            ,exts: 'jpg|png|bmp|jpeg' //只允许上传图片文件
-            ,url: '/video/upload?action=uploadimage'
-            ,before: function(obj){
-                //预读本地文件示例，不支持ie8
-                obj.preview(function(index, file, result){
-                    $('#demo1').attr('src', result); //图片链接（base64）
-                });
+            , saveW: 420     //保存宽度
+            , saveH: 300   //保存高度
+            , mark: 420/300    //选取比例
+            , field: 'upload'
+            , area: '900px'  //弹窗宽度
+            , url: "/video/upload?action=uploadimage"  //图片上传接口返回和（layui 的upload 模块）返回的JOSN一样
+            , done: function (data) { //上传完毕回调
+                layer.msg("上传成功！");
+                $("#picUrl").val(data.url);
+                $("#demo1").attr("src", "<?= CacheConfig::getConfigCache("endpoint").CacheConfig::getConfigCache("dirname"); ?>" + data.url);
             }
-            ,done: function(res){
-                if(res.state == 'SUCCESS'){
-                    layer.msg("上传成功！");
-                    $("#picUrl").val(res.url);
-                }
-            }
-            ,error: function(){
-                //演示失败状态，并实现重传
-                var demoText = $('#demoText');
-                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-                demoText.find('.demo-reload').on('click', function(){
-                    uploadInst.upload();
-                });
-            }
-        });
+        })
 
         // 页面初始化设置视频
         var videoSrc = "<?= CacheConfig::getConfigCache("endpoint"); ?>" + $("#video").val();

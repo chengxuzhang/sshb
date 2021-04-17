@@ -16,7 +16,7 @@ class BaseController extends Controller implements BackGlobalConst {
             'upload' => [
                 'class' => 'backend\components\UEditorAction',
                 'config' => [
-                    "imageUrlPrefix"  => self::HTTP_OSS_DOMAIN . self::HTTP_OSS_DIRNAME,//图片访问路径前缀
+                    "imageUrlPrefix"  => CacheConfig::getConfigCache('endpoint') . CacheConfig::getConfigCache('dirname'),//图片访问路径前缀
                     "imagePathFormat" => "/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", //上传保存路径
                     "imageFieldName"  => "upload",
                     "imageUrlAftfix"  => "", // 文件后缀

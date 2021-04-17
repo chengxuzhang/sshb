@@ -65,10 +65,13 @@ use backend\components\CacheConfig;
 <script>
     var coverUrl = $("#coverUrl").val();
     if(coverUrl != '') $('#demo1').attr('src', "<?= CacheConfig::getConfigCache("endpoint").CacheConfig::getConfigCache("dirname"); ?>" + coverUrl);
-    layui.use(['upload','layer','form'], function(){
+    layui.config({
+        base: '/layui/lay/modules/' //layui自定义layui组件目录
+    }).use(['upload','layer','form', 'croppers'], function(){
         var $ = layui.jquery
             ,upload = layui.upload
             ,form = layui.form
+            ,croppers = layui.croppers
             ,layer = layui.layer;
 
         //监听提交
@@ -85,35 +88,21 @@ use backend\components\CacheConfig;
             return false;
         });
 
-        //普通图片上传
-        var uploadInst = upload.render({
+        //创建一个头像上传组件
+        croppers.render({
             elem: '#test1'
-            ,field: 'upload'
-            ,accept: 'file' //普通文件
-            ,exts: 'jpg|png|bmp|jpeg' //只允许上传图片文件
-            ,url: '/document/upload?action=uploadimage'
-            ,before: function(obj){
-                //预读本地文件示例，不支持ie8
-                obj.preview(function(index, file, result){
-                    $('#demo1').attr('src', result); //图片链接（base64）
-                });
+            , saveW: 420     //保存宽度
+            , saveH: 300   //保存高度
+            , mark: 420/300    //选取比例
+            , field: 'upload'
+            , area: '900px'  //弹窗宽度
+            , url: "/document/upload?action=uploadimage"  //图片上传接口返回和（layui 的upload 模块）返回的JOSN一样
+            , done: function (data) { //上传完毕回调
+                layer.msg("上传成功！");
+                $("#coverUrl").val(data.url);
+                $("#demo1").attr("src", "<?= CacheConfig::getConfigCache("endpoint").CacheConfig::getConfigCache("dirname"); ?>" + data.url);
             }
-            ,done: function(res){
-                console.log(res);
-                if(res.state == 'SUCCESS'){
-                    layer.msg("上传成功！");
-                    $("#coverUrl").val(res.url);
-                }
-            }
-            ,error: function(){
-                //演示失败状态，并实现重传
-                var demoText = $('#demoText');
-                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
-                demoText.find('.demo-reload').on('click', function(){
-                    uploadInst.upload();
-                });
-            }
-        });
+        })
 
         //调用示例
         layer.photos({
