@@ -43,7 +43,7 @@ $this->title = $title;
                             <span style="color:#999999;">公司地址：</span><?= CacheConfig::getConfigCache('address') ?><br />
                             <br><br><br>
                             <p>
-                                <img src="<?= Url::to('@web/images/contact.jpg') ?>" />
+                                <!--这里放个百度地图-->
                             </p>
                             <br>
                             <br>
