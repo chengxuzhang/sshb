@@ -1,12 +1,13 @@
 <?php
 
+use frontend\components\CacheConfig;
 use frontend\models\Category;
 use yii\helpers\Url;
 
 
 $controller = Yii::$app->controller->id;
 $category = Category::find()->all();
-$productType = getConfigList(\frontend\components\CacheConfig::getConfigCache('product_type'), ":");
+$productType = getConfigList(CacheConfig::getConfigCache('product_type'), ":");
 
 ?>
 <header id="header-sec" class="header">
@@ -25,7 +26,7 @@ $productType = getConfigList(\frontend\components\CacheConfig::getConfigCache('p
         <div class="row">
             <div class="col-lg-3 col-md-4 col-lg-offset-0 col-md-offset-4 logo">
                 <a href="/">
-                    <img src="<?= Url::to('@web/images/logo.png'); ?>" alt="Logo"/>
+                    <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("logo") ?>" alt="Logo"/>
                 </a> </div>
             <a class="mmenu-btn noDis" href="#mmenu"><i class="fa fa-bars"></i></a>
             <nav class="col-lg-9 col-md-12 col-lg-pull-0 col-md-pull-1 mainmenu-container" id="navigation">
