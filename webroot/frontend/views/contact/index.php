@@ -30,16 +30,17 @@ $this->title = $title;
             <div class="row">
                 <div class="main col-md-9 inner-left" role="main">
                     <div class="about-page-wrap">
-                        <div class="com-cnt page-content"> <h1>
-                                四顺环保</h1>
-                            <p>
-                                &nbsp;</p>
-                            <?= CacheConfig::getConfigCache('footer_remark') ?><br />
-                            公司电话：<?= CacheConfig::getConfigCache('phone') ?><br />
-                            公司传真：<?= CacheConfig::getConfigCache('tel') ?><br />
-                            公司邮箱：<?= CacheConfig::getConfigCache('email') ?><br />
-                            公司地址：<?= CacheConfig::getConfigCache('address') ?><br />
-                            <p>乘车路线：<?= CacheConfig::getConfigCache('bus') ?></p>
+                        <div class="com-cnt page-content" style="font-size: 26px;">
+                            <h1>
+                                四顺环保
+                            </h1>
+                            <p>&nbsp;</p>
+                            <?= CacheConfig::getConfigCache('footer_remark') ?>
+                            <br />
+                            <br />
+                            <span style="color:#999999;">公司电话：</span><?= CacheConfig::getConfigCache('phone') ?><br />
+                            <span style="color:#999999;">公司邮箱：</span><?= CacheConfig::getConfigCache('email') ?><br />
+                            <span style="color:#999999;">公司地址：</span><?= CacheConfig::getConfigCache('address') ?><br />
                             <br><br><br>
                             <p>
                                 <img src="<?= Url::to('@web/images/contact.jpg') ?>" />
