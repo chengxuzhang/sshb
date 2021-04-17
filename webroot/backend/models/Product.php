@@ -67,7 +67,7 @@ class Product extends \backend\components\BaseModel
             'uid' => '发布者',
             'name' => '标识',
             'title' => '标题',
-//            'category_id' => 'Category ID',
+            'category_id' => '产品类型',
             'description' => '描述',
             'root' => 'Root',
             'pid' => 'Pid',
