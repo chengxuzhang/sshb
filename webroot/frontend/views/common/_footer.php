@@ -25,7 +25,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
                 </nav>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom: 30px;">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs widget foot-about">
                 <h3 class="dark-title"><a href="/about.html" style="color: #fff;">公司简介</a> </h3>
                 <div class="f-about">
@@ -73,7 +73,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
         <div class="row">
             <div class="copyright pull-left" style="width:100%;text-align:center;">
                 <p>
-                    Copyright &copy; 2021  版权所有
+                    Copyright &copy; 2021-2022  版权所有
                     <a href="http://beian.miit.gov.cn/" target="_blank" style="color: #7e959e;margin-left:20px;">鲁ICP备2021011841号</a>
                 </p>
             </div>
