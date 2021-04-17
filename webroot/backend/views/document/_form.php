@@ -5,9 +5,6 @@ use yii\widgets\ActiveForm;
 use backend\components\CacheConfig;
 ?>
 
-<?= Html::cssFile('@web/tag/css/tab.css') ?>
-<?= Html::cssFile('@web/oss-form/style.css') ?>
-
 <div class="document-form">
 
     <?php $form = ActiveForm::begin([
