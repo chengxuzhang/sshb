@@ -27,22 +27,22 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 hidden-sm hidden-xs widget foot-about">
-                <h3 class="dark-title"><a href="/about.html">公司简介</a> </h3>
+                <h3 class="dark-title"><a href="/about.html" style="color: #fff;">公司简介</a> </h3>
                 <div class="f-about">
                     <p>
                         <?= CacheConfig::getConfigCache('footer_remark'); ?>
                     </p>
                 </div>
                 <a href="/about.html" class="read-more">查看更多 <i class="fa fa-angle-double-right"></i></a>
-                <ul class="social">
-                    <li><a href="http://www.weibo.com/gooxao" class="hvr-radial-out" target="_blank"><i class="fa fa-weibo"></i></a></li>
-                    <li><a href="http://t.qq.com/gooxao2" class="hvr-radial-out" target="_blank"><i class="fa fa-tencent-weibo"></i></a></li>
-                    <li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=XXX&amp;site=qq&amp;menu=yes" class="hvr-radial-out" target="_blank"><i class="fa fa-qq"></i></a></li>
-                    <li><a href="https://www.tmall.com/" class="hvr-radial-out" target="_blank"><i class="fa fa-shopping-cart"></i></a></li>
+                <ul class="social" style="display: none;">
+                    <li><a href="javascript:;" class="hvr-radial-out" target="_blank"><i class="fa fa-weibo"></i></a></li>
+                    <li><a href="javascript:;" class="hvr-radial-out" target="_blank"><i class="fa fa-tencent-weibo"></i></a></li>
+                    <li><a href="javascript:;" class="hvr-radial-out" target="_blank"><i class="fa fa-qq"></i></a></li>
+                    <li><a href="javascript:;" class="hvr-radial-out" target="_blank"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget hidden-sm hidden-xs">
-                <h3 class="dark-title"><a href="/news.html">新闻资讯</a> </h3>
+                <h3 class="dark-title"><a href="/news.html" style="color:#fff;">新闻资讯</a> </h3>
                 <ul class="popular-post">
                     <?php foreach($news as $key => $val) { ?>
                     <li> <a href="/news/detail/<?= $val->id ?>.html">
@@ -54,11 +54,10 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
                 </ul>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 widget foot-contact hidden-sm hidden-xs">
-                <h3 class="dark-title"><a href="/contactus.html">联系信息</a></h3>
+                <h3 class="dark-title"><a href="/contactus.html" style="color:#fff;">联系信息</a></h3>
                 <ul class="contact-info">
                     <li> <i class="fa fa-map-marker"></i> 公司地址：<?= CacheConfig::getConfigCache('address') ?> </li>
                     <li> <i class="fa fa-phone"></i> 电话：<?= CacheConfig::getConfigCache('phone') ?> </li>
-                    <li> <i class="fa fa-envelope-o"></i> 传真：<?= CacheConfig::getConfigCache('phone') ?> </li>
                     <li> <i class="fa fa-globe"></i> 邮箱：<?= CacheConfig::getConfigCache('email') ?> </li>
                 </ul>
             </div>
@@ -75,7 +74,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
             <div class="copyright pull-left" style="width:100%;text-align:center;">
                 <p>
                     Copyright &copy; 2021  版权所有
-                    <a href="http://beian.miit.gov.cn/" target="_blank">鲁ICP备2021011841号</a>
+                    <a href="http://beian.miit.gov.cn/" target="_blank" style="color: #7e959e;margin-left:20px;">鲁ICP备2021011841号</a>
                 </p>
             </div>
         </div>
