@@ -1,0 +1,84 @@
+<?php
+namespace frontend\controllers;
+
+use frontend\components\CacheConfig;
+use frontend\models\Product;
+use Yii;
+use yii\data\Pagination;
+use yii\web\Controller;
+
+/**
+ * Site controller
+ */
+class SearchController extends Controller
+{
+    public $enableCsrfValidation = false;
+    /**
+     * @inheritdoc
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
+
+    /**
+     * 新闻列表页面
+     * @return string
+     */
+    public function actionIndex()
+    {
+        $get = Yii::$app->request->get();
+        $condition = ['like', 'title', $get['q']];
+        $currentPage = isset($get['page']) ? $get['page'] : 1;
+
+        $query = Product::find()->andFilterWhere($condition); //Field为model层,在控制器刚开始use了field这个model,这儿可以直接写Field,开头大小写都可以,为了规范,我写的是大写
+        $pages = new Pagination(['totalCount' =>$query->count(), 'pageSize' => '9']);    //实例化分页类,带上参数(总条数,每页显示条数)
+        $model = $query->offset($pages->getOffset())->limit($pages->getLimit())->orderBy("update_time DESC")->all();
+
+        // 上一页地址
+        if($currentPage <= 1){
+            $prevUrl = null;
+        }else{
+            $prevUrl = "/search/" . ($currentPage - 1) . ".html";
+        }
+
+        // 下一页地址
+        if($currentPage >= $pages->getPageCount()){
+            $nextUrl = null;
+        }else{
+            $nextUrl = "/search/" . ($currentPage + 1) . ".html";
+        }
+
+        $pageList = [];
+        for ($i = 1;$i<=$pages->getPageCount();$i++){
+            $params = $i . ".html";
+            $temp = [
+                'url' => "/search/" . $params,
+                'index' => $i,
+                'current' => $i == $currentPage ? "Ahover" : ""
+            ];
+            $pageList[] = $temp;
+        }
+
+        $title = $get['q'];
+
+        return $this->render('index', [
+            'title' => $title,
+            'model' => $model,
+            'currentPage' => $currentPage,
+            'totalPage' => $pages->getPageCount(),
+            'prevUrl' => $prevUrl,
+            'nextUrl' => $nextUrl,
+            'pageList' => $pageList,
+        ]);
+    }
+
+}

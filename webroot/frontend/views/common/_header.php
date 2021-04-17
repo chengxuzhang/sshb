@@ -14,7 +14,7 @@ $productType = getConfigList(CacheConfig::getConfigCache('product_type'), ":");
     <div class="search-box">
         <div class="container">
             <div class="pull-right search  col-lg-3 col-md-4 col-sm-5 col-xs-12">
-                <form  class="t-search-form" name="formsearch" action="/plus/search.php">
+                <form  class="t-search-form" name="formsearch" action="/search.html">
                     <input type="hidden" name="kwtype" value="0" />
                     <input type="text" value="" name="q" class="search-input" placeholder="输入关键字"/>
                     <button type="submit" class="search-btn"><i class="icon icon-Search"></i></button>

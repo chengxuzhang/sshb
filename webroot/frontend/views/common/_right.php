@@ -12,7 +12,7 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
 <aside class="sidebar col-md-3 inner-right" role="complementary">
     <section class="widget side-search">
         <h3 class="title">站内搜索</h3>
-        <form class="searchform" name="formsearch" action="/plus/search.php">
+        <form class="searchform" name="formsearch" action="/search.html">
             <input type="hidden" name="kwtype" value="0"/>
             <div class="sform-div">
                 <label class="screen-reader-text" for="s"></label>

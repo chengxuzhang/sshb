@@ -127,6 +127,14 @@ return [
                     'route'=>'product/view',
                     'suffix'=>'.html'
                 ],
+                // 搜索路由
+                ['pattern'=>'search','route'=>'search','suffix'=>'.html'],
+                [
+                    'pattern'=>'search/<page:\d+>',
+                    'route'=>'search/index',
+                    'defaults' => ['page'=>1],
+                    'suffix'=>'.html'
+                ],
                 ['pattern'=>'contact','route'=>'contact','suffix'=>'.html'],
                 ['pattern'=>'about','route'=>'about','suffix'=>'.html'],
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>",
