@@ -7,6 +7,8 @@ use frontend\components\CacheConfig;
 $this->title = $title;
 ?>
 
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=<?= CacheConfig::getConfigCache("mapkey") ?>"></script>
+
 <?php echo $this->render('/common/_check'); ?>
 <div class="preloader"></div>
 <div id="page-body-wrap">
@@ -44,6 +46,7 @@ $this->title = $title;
                             <br><br><br>
                             <p>
                                 <!--这里放个百度地图-->
+                                <div class="map" id="allmap"></div>
                             </p>
                             <br>
                             <br>
@@ -100,4 +103,27 @@ $this->title = $title;
             return false;
         });
     })
+</script>
+
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    var point = new BMap.Point(<?= CacheConfig::getConfigCache("point") ?>);
+    map.centerAndZoom(point, <?= CacheConfig::getConfigCache("maplevel") ?>);  // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);              // 将标注添加到地图中
+    var opts = {
+        width : 200,     // 信息窗口宽度
+        height: 100,     // 信息窗口高度
+        title : "<?= CacheConfig::getConfigCache("maptitle") ?>" , // 信息窗口标题
+        enableMessage:true,//设置允许信息窗发送短息
+        message:"<?= CacheConfig::getConfigCache("mapaddress") ?>"
+    };
+    var infoWindow = new BMap.InfoWindow("地址：<?= CacheConfig::getConfigCache("mapaddress") ?>", opts);  // 创建信息窗口对象
+    map.openInfoWindow(infoWindow,point); //开启信息窗口
+    marker.addEventListener("click", function(){
+        map.openInfoWindow(infoWindow,point); //开启信息窗口
+    });
 </script>
