@@ -37,64 +37,67 @@ $this->title = CacheConfig::getConfigCache("title");
             </div>
         </div>
     </section>
-    <section id="who-we-are">
-        <div class="container">
-            <div class="row"> <div class="col-lg-6 col-md-12 large-box col-sm-12 col-xs-12 wow zoomIn hvr-float-shadow whyitem-1" data-wow-duration=".5s">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 img-holder">
-                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_1") ?>" alt=""/>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 hvr-bounce-to-left adv-text-one">
-                        <h2><?= CacheConfig::getConfigCache("product_title_1") ?></h2>
-                        <p><?= CacheConfig::getConfigCache("product_remark_1") ?></p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn whyitem-2" data-wow-duration=".5s" data-wow-delay=".5s">
-                    <div class="img-holder">
-                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_2") ?>" alt=""/>
-                    </div>
-                    <h2><?= CacheConfig::getConfigCache("product_title_2") ?></h2>
-                    <p><?= CacheConfig::getConfigCache("product_remark_2") ?></p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn whyitem-3" data-wow-duration=".5s" data-wow-delay="1s">
-                    <div class="img-holder">
-                        <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_3") ?>" alt=""/>
-                    </div>
-                    <h2><?= CacheConfig::getConfigCache("product_title_3") ?></h2>
-                    <p><?= CacheConfig::getConfigCache("product_remark_3") ?></p>
-                </div> </div>
-        </div>
-    </section>
     <section id="our-projects">
         <div class="container">
             <div class="section-title"> <h1 class="dark-title"><a href="/product.html" target="_blank">产品系列</a></h1> </div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 masonary-gallery">
                     <?php foreach($product as $key => $val) { ?>
-                    <div class="masonary-item width-1"> <a class="fancybox" href="/product/detail/<?= $val->id ?>.html" target="_blank">
-                            <div class="img-wrap">
-                                <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>" alt="Image"/>
-                                <div class="content-wrap">
-                                    <div class="border">
-                                        <div class="content">
-                                            <h4 title="<?= $val->title ?>"><?= $val->description ?></h4>
-                                            <span><?= $val->title ?></span> </div>
+                        <div class="masonary-item width-1"> <a class="fancybox" href="/product/detail/<?= $val->id ?>.html" target="_blank">
+                                <div class="img-wrap">
+                                    <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . $val->cover_url ?>" alt="Image"/>
+                                    <div class="content-wrap">
+                                        <div class="border">
+                                            <div class="content">
+                                                <h4 title="<?= $val->title ?>"><?= $val->description ?></h4>
+                                                <span><?= $val->title ?></span> </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                        <h3 class="iport-h3-title">
-                            <a href="/product/detail/<?= $val->id ?>.html" title="<?= $val->title ?>" target="_blank">
-                                <?= $val->title ?>
                             </a>
-                        </h3>
-                    </div>
+                            <h3 class="iport-h3-title">
+                                <a href="/product/detail/<?= $val->id ?>.html" title="<?= $val->title ?>" target="_blank">
+                                    <?= $val->title ?>
+                                </a>
+                            </h3>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
             <div class="view-all-btn"><a href="/product.html" class="view-all hvr-bounce-to-right" target="_blank">查看更多</a> </div>
         </div>
     </section>
+    <section id="who-we-are">
+        <div style="width: 100%;padding: 30px 0;height: 362px;overflow: hidden;">
+            <div class="container">
+                <div class="row"> <div class="col-lg-6 col-md-12 large-box col-sm-12 col-xs-12 wow zoomIn hvr-float-shadow whyitem-1" data-wow-duration=".5s">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 img-holder">
+                            <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_1") ?>" alt=""/>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 hvr-bounce-to-left adv-text-one">
+                            <h2><?= CacheConfig::getConfigCache("product_title_1") ?></h2>
+                            <p><?= CacheConfig::getConfigCache("product_remark_1") ?></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn whyitem-2" data-wow-duration=".5s" data-wow-delay=".5s">
+                        <div class="img-holder">
+                            <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_2") ?>" alt=""/>
+                        </div>
+                        <h2><?= CacheConfig::getConfigCache("product_title_2") ?></h2>
+                        <p><?= CacheConfig::getConfigCache("product_remark_2") ?></p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-box wow zoomIn whyitem-3" data-wow-duration=".5s" data-wow-delay="1s">
+                        <div class="img-holder">
+                            <img src="<?= CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache("product_img_3") ?>" alt=""/>
+                        </div>
+                        <h2><?= CacheConfig::getConfigCache("product_title_3") ?></h2>
+                        <p><?= CacheConfig::getConfigCache("product_remark_3") ?></p>
+                    </div> </div>
+            </div>
+        </div>
+    </section>
+
     <section id="our-specialist">
         <div class="container">
             <div class="section-title"> <h1><a href="/video.html" target="_blank">网站视频</a></h1> </div>

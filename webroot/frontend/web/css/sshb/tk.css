@@ -23,7 +23,7 @@ a:hover, a:active {
 	text-decoration: none;
 }
 .dark-title a {
-	color: #fff;
+	color: #000;
 }
 .dark-title a:hover, .dark-title a:active {
 	color: #1cbac8;
@@ -70,6 +70,7 @@ header .mainmenu-container ul li.top-icons a i {
 }
 #who-we-are {
 	padding: 45px 0;
+	background-image: url(../images/project-bg.jpg);
 }
 .whyitem-1 {
 	position: relative;
@@ -81,7 +82,6 @@ header .mainmenu-container ul li.top-icons a i {
 }
 #our-projects {
 	padding: 45px 0;
-	background-image: url(../images/project-bg.jpg);
 }
 #our-projects .masonary-item {
 	height: auto;
@@ -110,7 +110,7 @@ header .mainmenu-container ul li.top-icons a i {
 	line-height: 1.4;
 }
 .iport-h3-title a {
-	color: #fff;
+	color: #000;
 	overflow-x: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -1455,9 +1455,7 @@ header .mainmenu-container ul li a {
 }
 #who-we-are {
 	padding: 0;
-	margin: 45px 0;
-	height: 342px;
-	overflow-y: hidden;
+	height: 392px;
 }
 #who-we-are .single-box p {
 	line-height: 25px;
