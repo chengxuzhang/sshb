@@ -30,7 +30,7 @@ $this->title = $title;
         <div class="container">
             <div class="row">
                 <div class="main col-md-9 inner-left" role="main">
-                    <div class="about-page-wrap">
+                    <div class="about-page-wrap" style="font-size: 24px;">
                         <?= CacheConfig::getConfigCache("remark") ?>
                     </div>
                 </div>
