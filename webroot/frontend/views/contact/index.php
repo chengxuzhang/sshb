@@ -46,7 +46,7 @@ $this->title = $title;
                             <br><br><br>
                             <p>
                                 <!--这里放个百度地图-->
-                                <div class="map" id="allmap"></div>
+                                <div class="map" id="allmap" style="width: 100%;height: 500px;"></div>
                             </p>
                             <br>
                             <br>
