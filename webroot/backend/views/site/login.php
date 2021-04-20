@@ -17,7 +17,7 @@ $fieldOptions2 = [
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="javascript:;">股票分析系统</a>
+        <a href="javascript:;">四顺环保后台系统</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
