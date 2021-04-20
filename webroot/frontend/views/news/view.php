@@ -46,7 +46,7 @@ $this->title = $model->title;
                 <?php echo $this->render('/common/_right'); ?>
             </div>
         </div>
-        <div class="for-bottom-padding"></div>
-        <?php echo $this->render('/common/_footer'); ?>
     </div>
+    <div class="for-bottom-padding"></div>
+    <?php echo $this->render('/common/_footer'); ?>
 </div>
