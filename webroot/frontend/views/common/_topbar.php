@@ -12,7 +12,7 @@ use frontend\components\Html;
                     <li class="top-phone"><a href="tel:<?= CacheConfig::getConfigCache("phone") ?>" class="hvr-bounce-to-bottom"><i class="fa fa-phone"></i>
                             <?= CacheConfig::getConfigCache("phone") ?>
                         </a></li>
-                    <li class="top-email"><a href="mailto:XXX@qq.com" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i>
+                    <li class="top-email"><a href="mailto:<?= CacheConfig::getConfigCache("email") ?>" class="hvr-bounce-to-bottom"><i class="fa fa-envelope-o"></i>
                             <?= CacheConfig::getConfigCache("email") ?>
                         </a></li>
                 </ul>
