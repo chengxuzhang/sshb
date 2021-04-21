@@ -120,6 +120,12 @@ $news = News::find()->limit(4)->orderBy('create_time desc')->all();
             mmenuAPI.close();
         });
 
+        backTop({
+            qq: '<?= CacheConfig::getConfigCache('qq') ?>',
+            phone: '<?= CacheConfig::getConfigCache('phone') ?>',
+            weixin: '<?=  CacheConfig::getConfigCache("endpoint") . CacheConfig::getConfigCache("dirname") . CacheConfig::getConfigCache('qrcode') ?>'
+        })
+
         layui.use(['layer'], function () {
             layer = layui.layer;
 
