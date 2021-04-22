@@ -1,5 +1,5 @@
 /*main css*/
-.izl-rmenu{position:fixed; right:10px; bottom:10px; padding-bottom:10px; background:url(./images/r_b.png) 0px bottom no-repeat; z-index:999; }
+.izl-rmenu{position:fixed; right:30px; bottom:10px; padding-bottom:10px; background:url(./images/r_b.png) 0px bottom no-repeat; z-index:999; }
 .izl-rmenu .btns{width:72px; height:73px; margin-bottom:1px; cursor:pointer; position:relative;}
 .izl-rmenu .btn-qq{background:url(./images/r_qq.png) 0px 0px no-repeat; background-color:#6da9de;}
 .izl-rmenu .btn-qq:hover{background-color:#488bc7;}
